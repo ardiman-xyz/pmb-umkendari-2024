@@ -67,6 +67,7 @@ module.exports = {
     fontFamily: {
         sans: ["Figtree", ...defaultTheme.fontFamily.sans],
         albert: ["Albert Sans", "sans-serif"],
+        inter: ["Inter", "sans-serif"]
     },
       keyframes: {
         "accordion-down": {
