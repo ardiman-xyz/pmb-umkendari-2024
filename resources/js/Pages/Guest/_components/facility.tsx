@@ -4,18 +4,18 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import { Pagination, Autoplay } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 
 const Facility = () => {
     return (
-        <div className="flex md:flex-row flex-col mb-[100px] gap-y-3 md:gap-y-0">
+        <div className="flex md:flex-row flex-col gap-y-3 md:gap-y-0">
             <div className="md:w-1/2 w-full">
-                <h1 className="font-bold text-3xl">
+                <h1 className="font-extrabold md:text-4xl text-2xl  mt-6 md:leading-snug ">
                     Ayo, Bergabung bersama kami !
                 </h1>
                 <p className="mt-4 text-muted-foreground">
                     Berbagai fasilitas modern dan terkini tersedia di kampus
-                    kita tercinta kami.
+                    kami.
                 </p>
             </div>
             <div className="md:w-1/2 w-full">
