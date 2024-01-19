@@ -5,6 +5,8 @@ import Jumbotron from "./_components/jumbotron";
 import Programs from "./_components/programs";
 import Facility from "./_components/facility";
 import Achievements from "./_components/achievements";
+import Procedure from "./_components/procedure";
+import Footer from "./_components/footer";
 
 export default function Home({
     auth,
@@ -15,7 +17,7 @@ export default function Home({
         <>
             <Head title="Welcome" />
             <Guest>
-                <div className="pb-[200px]">
+                <div>
                     <Jumbotron />
                     <section className="mt-10 container mx-auto">
                         <Programs />
@@ -26,6 +28,13 @@ export default function Home({
 
                     <section className="mt-[200px] ">
                         <Achievements />
+                    </section>
+
+                    <section className="mt-[100px] container mx-auto">
+                        <Procedure />
+                    </section>
+                    <section>
+                        <Footer />
                     </section>
                 </div>
             </Guest>

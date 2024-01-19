@@ -15,16 +15,6 @@ const Achievements = () => {
     return (
         <div className="bg-[#EDEAE3] h-[500px]">
             <div className="container mx-auto flex md:flex-row flex-col gap-y-3 md:gap-y-0 md:space-x-10 space-x-0">
-                <div className="md:w-1/2 w-full ">
-                    <h1 className="font-extrabold md:text-4xl text-2xl  mt-6 md:leading-snug ">
-                        Wujudkan Minatmu Lewat Beragam Kegiatan Kampus
-                    </h1>
-
-                    <p className="mt-5 leading-relaxed">
-                        Yuk bergabung bersama komunitas kampus untuk mengasah
-                        talenta dan jiwa kepemimpinanmu!
-                    </p>
-                </div>
                 <div className="md:w-1/2 w-full h-full rounded overflow-hidden">
                     <Swiper
                         direction={"vertical"}
@@ -80,6 +70,16 @@ const Achievements = () => {
                             />
                         </SwiperSlide>
                     </Swiper>
+                </div>
+                <div className="md:w-1/2 w-full ">
+                    <h1 className="font-extrabold md:text-4xl text-2xl  mt-6 md:leading-snug ">
+                        Wujudkan Minatmu Lewat Beragam Kegiatan Kampus
+                    </h1>
+
+                    <p className="mt-5 leading-relaxed">
+                        Yuk bergabung bersama komunitas kampus untuk mengasah
+                        talenta dan jiwa kepemimpinanmu!
+                    </p>
                 </div>
             </div>
         </div>
