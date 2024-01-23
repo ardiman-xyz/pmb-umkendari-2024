@@ -16,7 +16,10 @@ const Programs = () => {
                     ADMISI SARJANA (S1)
                 </h1>
             </div>
-            <div className="w-full cursor-pointer bg-[#851518] flex items-center justify-center md:h-[105px] h-[60px]">
+            <div
+                onClick={() => handleRedirect("graduate.index")}
+                className="w-full cursor-pointer bg-[#851518] flex items-center justify-center md:h-[105px] h-[60px]"
+            >
                 <h1 className="font-bold uppercase text-white ">
                     ADMISI PASCASARJANA (S2)
                 </h1>

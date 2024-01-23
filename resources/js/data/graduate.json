@@ -1,0 +1,34 @@
+{
+    "postgraduate_programs": [
+        {
+            "name": "Program Studi Magister Administrasi Pendidikan",
+            "accreditation": "Baik",
+            "quota": 40
+        },
+        {
+            "name": "Program Studi Magister Agribisnis",
+            "accreditation": "Baik",
+            "quota": 40
+        },
+        {
+            "name": "Program Studi Magister Manajemen",
+            "accreditation": "Baik",
+            "quota": 75
+        },
+        {
+            "name": "Program Studi Magister Ilmu Hukum",
+            "accreditation": "Baik",
+            "quota": 50
+        },
+        {
+            "name": "Program Studi Magister Ilmu Pemerintahan",
+            "accreditation": "Baik",
+            "quota": 50
+        },
+        {
+            "name": "Program Studi Magister Pendidikan Bahasa Inggris",
+            "accreditation": "Baik",
+            "quota": 50
+        }
+    ]
+}

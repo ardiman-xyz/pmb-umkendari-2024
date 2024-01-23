@@ -1,0 +1,116 @@
+{
+    "admission_paths": [
+        {
+            "name": "Jalur Umum",
+            "description": "Jalur seleksi masuk dengan tes CBT (Coputer Based Test) untuk seluruh program studi. Tes dilaksanakan di kampus Universitas Muhammadiyah Kendari ataupun secara online di tempat domisili calon mahasiswa baru.",
+            "requirements": [
+                "Nilai Raport minimal 7,5",
+                "Scan Fotocopy Ijazah/SKL dan SKHU yang disahkan",
+                "Scan Fotocopy Raport Semester 1-5",
+                "Scan Fotocopy Akte Kelahrian",
+                "Scan Fotocopy Kartu Keluarga",
+                "Scan Fotocopy KTP",
+                "Pas Foto berwarna ukuran 2x3",
+                "Surat pernyataan sanggup mengikuti peraturan yang berlaku di Universitas Muhammadiyah Kendari",
+                "Mengikuti Tes CBT"
+            ]
+        },
+        {
+            "name": "Jalur Beasiswa",
+            "scholarships": [
+                {
+                    "name": "Beasiswa Prestasi Akademik",
+                    "description": "Jalur tanpa tes berdasarkan prestasi akademik minimal peringkat 10 dari hasil nilai ujian akhir.",
+                    "benefits": [
+                        "Bebas Biaya Pendaftaran",
+                        "Potongan Biaya Penyelenggaraan Pendidikan (BPP) minimal 50%"
+                    ],
+                    "requirements": [
+                        "Nilai Raport minimal 8,0",
+                        "Scan Fotocopy Ijazah/SKL dan SKHU yang disahkan",
+                        "Scan Fotocopy Raport Semester 1-5",
+                        "Scan Fotocopy Akte Kelahrian",
+                        "Scan Fotocopy Kartu Keluarga",
+                        "Scan Fotocopy KTP",
+                        "Pas Foto berwarna ukuran 2x3",
+                        "Surat pernyataan sanggup mengikuti peraturan yang berlaku di Universitas Muhammadiyah Kendari",
+                        "Mengikuti Seleksi Wawancara"
+                    ]
+                },
+                {
+                    "name": "Beasiswa Prestasi Non-Akademik (Sains, Seni dan Olahraga)",
+                    "description": "Jalur tanpa tes berdasarkan prestasi non-akademik: Sains, Seni dan Olahraga perorangan.",
+                    "benefits": "Pembebasan Biaya Penyelenggaraan Pendidikan (BPP) dengan kriteria tertentu",
+                    "requirements": [
+                        "Nilai Raport minimal 7,5",
+                        "Scan Fotocopy Ijazah/SKL dan SKHU yang disahkan",
+                        "Scan Fotocopy Raport Semester 1-5",
+                        "Scan Fotocopy Akte Kelahrian",
+                        "Scan Fotocopy Kartu Keluarga",
+                        "Scan Fotocopy KTP",
+                        "Pas Foto berwarna ukuran 2x3",
+                        "Scan sertifikat (asli) prestasi",
+                        "Surat pernyataan sanggup mengikuti peraturan yang berlaku di Universitas Muhammadiyah Kendari",
+                        "Mengikuti Seleksi Wawancara"
+                    ]
+                },
+                {
+                    "name": "Beasiswa Hafidz Qur’an",
+                    "description": "Jalur seleksi berdasarkan kemampuan hafalan Al Qur’an.",
+                    "benefits": "Pembebasan Biaya Penyelenggaraan Pendidikan (BPP) dengan kriteria tertentu",
+                    "requirements": [
+                        "Nilai Raport minimal 7,5",
+                        "Scan Fotocopy Ijazah/SKL dan SKHU yang disahkan",
+                        "Scan Fotocopy Raport Semester 1-5",
+                        "Scan Fotocopy Akte Kelahrian",
+                        "Scan Fotocopy Kartu Keluarga",
+                        "Scan Fotocopy KTP",
+                        "Pas Foto berwarna ukuran 2x3",
+                        "Surat Keterangan Tidak Mampu dari Kelurahan/Desa",
+                        "Surat pernyataan sanggup mengikuti peraturan yang berlaku di Universitas Muhammadiyah Kendari",
+                        "Mengikuti Seleksi Wawancara"
+                    ]
+                },
+                {
+                    "name": "Beasiswa Keluarga Persyarikatan Muhammadiyah",
+                    "description": "Jalur seleksi tanpa tes diberikan khusus bagi Keluarga Persyarikatan Muhammadiyah.",
+                    "benefits": [
+                        "Potongan Biaya Penyelenggaraan Pendidikan (BPP) sebesar 50% selama 8 (delapan) semester",
+                        "Bebas Biaya Pengembangan Sarpras (BPS)",
+                        "Khusus putra/putri pegawai tetap Universitas Muhammadiyah Kendari"
+                    ],
+                    "requirements": [
+                        "Nilai Raport minimal 7,5",
+                        "Scan Fotocopy Ijazah/SKL dan SKHU yang disahkan",
+                        "Scan Fotocopy Raport Semester 1-5",
+                        "Scan Fotocopy Akte Kelahrian",
+                        "Scan Fotocopy Kartu Keluarga",
+                        "Scan Fotocopy KTP",
+                        "Pas Foto berwarna ukuran 2x3",
+                        "Surat Keterangan/Rekomendasi dari PCM/PDM/PWM setempat",
+                        "Surat Keterangan Tidak Mampu dari Kelurahan/Desa",
+                        "Surat pernyataan sanggup mengikuti peraturan yang berlaku di Universitas Muhammadiyah Kendari",
+                        "Mengikuti Seleksi Wawancara"
+                    ]
+                },
+                {
+                    "name": "Beasiswa Minat Agro-Maritim",
+                    "description": "Jalur beasiswa khusus untuk pilihan program studi yang masuk dalam lingkup Agro-Maritim",
+                    "benefits": "Potongan Biaya Penyelenggaraan Pendidikan (BPP) sebesar 50% selama 8 (delapan) semester",
+                    "requirements": [
+                        "Nilai Raport minimal 7,5",
+                        "Scan Fotocopy Ijazah/SKL dan SKHU yang disahkan",
+                        "Scan Fotocopy Raport Semester 1-5",
+                        "Scan Fotocopy Akte Kelahrian",
+                        "Scan Fotocopy Kartu Keluarga",
+                        "Scan Fotocopy KTP",
+                        "Pas Foto berwarna ukuran 2x3",
+                        "Surat Keterangan Tidak Mampu dari Kelurahan/Desa",
+                        "Surat pernyataan sanggup mengikuti peraturan yang berlaku di Universitas Muhammadiyah Kendari",
+                        "Mengikuti Seleksi Wawancara"
+                    ]
+                }
+            ]
+        }
+    ]
+}

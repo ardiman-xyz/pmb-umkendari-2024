@@ -1,0 +1,154 @@
+{
+    "faculties": [
+        {
+            "name": "Fakultas Teknik",
+            "programs": [
+                {
+                    "name": "Program Studi Teknik Arsitektur",
+                    "accreditation": "B",
+                    "quota": 70
+                },
+                {
+                    "name": "Program Studi Teknik Lingkungan",
+                    "accreditation": "B",
+                    "quota": 70
+                },
+                {
+                    "name": "Program Studi Teknik Sipil",
+                    "accreditation": "Baik",
+                    "quota": 70
+                },
+                {
+                    "name": "Program Studi Teknik/Rekayasa Pertambangan",
+                    "accreditation": "Baik",
+                    "quota": 105
+                },
+                {
+                    "name": "Program Studi Sistem dan Teknologi Informasi",
+                    "accreditation": "Baik",
+                    "quota": 105
+                },
+                {
+                    "name": "Program Studi Teknik Kimia",
+                    "accreditation": "Baik",
+                    "quota": 35
+                }
+            ]
+        },
+        {
+            "name": "Fakultas Pertanian",
+            "programs": [
+                {
+                    "name": "Program Studi Agribisnis",
+                    "accreditation": "B",
+                    "quota": 70
+                },
+                {
+                    "name": "Program Studi Teknologi Industri Pertanian",
+                    "accreditation": "Baik",
+                    "quota": 40
+                }
+            ]
+        },
+        {
+            "name": "Fakultas Perikanan dan Ilmu Kelautan",
+            "programs": [
+                {
+                    "name": "Program Studi Teknologi Hasil Perikanan",
+                    "accreditation": "B",
+                    "quota": 70
+                },
+                {
+                    "name": "Program Studi Pemanfaatan Sumber Daya Perikanan",
+                    "accreditation": "B",
+                    "quota": 70
+                }
+            ]
+        },
+        {
+            "name": "Fakultas Ilmu Sosial dan Ilmu Politik",
+            "programs": [
+                {
+                    "name": "Program Studi Ilmu Pemerintahan",
+                    "accreditation": "B",
+                    "quota": 80
+                },
+                {
+                    "name": "Program Studi Desain Komunikasi Visual",
+                    "accreditation": "Baik",
+                    "quota": 40
+                }
+            ]
+        },
+        {
+            "name": "Fakultas Hukum",
+            "programs": [
+                {
+                    "name": "Program Studi Ilmu Hukum",
+                    "accreditation": "A",
+                    "quota": 280
+                }
+            ]
+        },
+        {
+            "name": "Fakultas Ekonomi dan Bisnis Islam",
+            "programs": [
+                {
+                    "name": "Program Studi Manajemen",
+                    "accreditation": "B",
+                    "quota": 320
+                },
+                {
+                    "name": "Program Studi Bisnis Digital",
+                    "accreditation": "Baik",
+                    "quota": 80
+                }
+            ]
+        },
+        {
+            "name": "Fakultas Keguruan dan Ilmu Pendidikan",
+            "programs": [
+                {
+                    "name": "Program Studi Administrasi Pendidikan",
+                    "accreditation": "A",
+                    "quota": 80
+                },
+                {
+                    "name": "Program Studi Pendidikan Guru Anak Usia Dini",
+                    "accreditation": "B",
+                    "quota": 80
+                },
+                {
+                    "name": "Program Studi Pendidikan Bahasa Inggris",
+                    "accreditation": "B",
+                    "quota": 80
+                },
+                {
+                    "name": "Program Studi Pendidikan Non Formal",
+                    "accreditation": "B",
+                    "quota": 40
+                },
+                {
+                    "name": "Program Studi Pendidikan Teknologi Informasi",
+                    "accreditation": "Baik",
+                    "quota": 125
+                },
+                {
+                    "name": "Program Studi Pendidikan Matematika",
+                    "accreditation": "Baik",
+                    "quota": 40
+                }
+            ]
+        },
+        {
+            "name": "Fakultas Agama Islam",
+            "programs": [
+                {
+                    "name": "Program Studi Pendidikan Agama Islam",
+                    "accreditation": "B",
+                    "quota": 135
+                }
+            ]
+        }
+    ]
+}
