@@ -1,13 +1,17 @@
-import { Head } from "@inertiajs/react";
+import { Head, router } from "@inertiajs/react";
 
 import underGraduates from "@/data/undergaraduate.json";
 
 import Guest from "@/Layouts/GuestLayout";
 import { Button } from "@/Components/ui/button";
-import { ArrowRight, ChevronRight, Download, File } from "lucide-react";
+import { ChevronRight, Download } from "lucide-react";
 
 const UndergraduatePage = () => {
     const { faculties } = underGraduates;
+
+    const handleRedirect = (programs: string) => {
+        return router.get(route(programs));
+    };
 
     return (
         <Guest>
@@ -32,14 +36,14 @@ const UndergraduatePage = () => {
 
                 <div className="w-full flex md:flex-row flex-col mt-10 md:gap-x-20 gap-x-0">
                     <div className="md:w-2/3 w-full pb-10">
-                        <div className="w-full mx-auto overflow-auto ">
+                        <div className="w-full mx-auto overflow-x-auto ">
                             {faculties.map((faculty, index) => (
                                 <div key={index} className="mb-6">
                                     <h1 className="mb-2 font-bold">
                                         {faculty.name}
                                     </h1>
 
-                                    <table className="w-full text-sm leading-normal border border-zinc-500">
+                                    <table className="w-[100%] text-sm leading-normal border border-zinc-500">
                                         <thead>
                                             <tr>
                                                 <th className="px-4 py-2 text-left border border-zinc-500">
@@ -49,7 +53,7 @@ const UndergraduatePage = () => {
                                                     Akreditasi
                                                 </th>
                                                 <th className="px-4 py-2 border border-zinc-500 text-center">
-                                                    Kuota
+                                                    Daya Tampung
                                                 </th>
                                             </tr>
                                         </thead>
@@ -65,7 +69,7 @@ const UndergraduatePage = () => {
                                                                 program.accreditation
                                                             }
                                                         </td>
-                                                        <td className="px-4 py-2 border border-zinc-500 w-[100px] text-center">
+                                                        <td className="px-4 py-2 border border-zinc-500 w-[200px] text-center">
                                                             {program.quota}
                                                         </td>
                                                     </tr>
@@ -79,8 +83,8 @@ const UndergraduatePage = () => {
                         <hr />
 
                         <div className="mt-10 flex">
-                            <Button variant="link" size="xl">
-                                Biaya pendidikan
+                            <Button variant="guestButtonDefault">
+                                Donwload template
                             </Button>
                         </div>
                     </div>
@@ -89,11 +93,24 @@ const UndergraduatePage = () => {
                         className="md:w-1/3 w-full mt-8 sticky top-0"
                     >
                         <ul className="w-full  flex flex-col">
-                            <li className="px-4 py-6 bg-red-800 text-white flex flex-row items-center gap-x-3 justify-between cursor-pointer ">
-                                Biaya pendidikan
+                            <li
+                                onClick={() => handleRedirect("graduate.index")}
+                                className="px-4 py-6 bg-red-800 text-white flex flex-row items-center gap-x-3 justify-between cursor-pointer "
+                            >
+                                Admisi Pascasarjana
                                 <ChevronRight />
                             </li>
-                            <li className="px-4 py-6 border-t bg-red-800 border-white border-opacity-80 text-white flex flex-row items-center gap-x-3 justify-between cursor-pointer ">
+                            <li
+                                onClick={() => handleRedirect("tuition.index")}
+                                className="px-4 py-6 border-t bg-red-800 text-white flex flex-row items-center gap-x-3 justify-between cursor-pointer "
+                            >
+                                Biaya Pendidikan
+                                <ChevronRight />
+                            </li>
+                            <li
+                                onClick={() => handleRedirect("pathways.index")}
+                                className="px-4 py-6 border-t bg-red-800 border-white border-opacity-80 text-white flex flex-row items-center gap-x-3 justify-between cursor-pointer "
+                            >
                                 Persyaratan
                                 <ChevronRight />
                             </li>
@@ -105,7 +122,11 @@ const UndergraduatePage = () => {
 
                         <div className=" mt-10 md:mb-0 mb-10">
                             <div className="w-full cursor-pointer relative">
-                                <img src="/images/brosur.png" alt="logo" />
+                                <img
+                                    src="/images/brosur.png"
+                                    alt="logo"
+                                    className="w-full"
+                                />
 
                                 <div className="absolute top-0 right-0 bg-red-800 p-2 rounded-full animate-bounce">
                                     <Download className="stroke-white w-4 h-4" />

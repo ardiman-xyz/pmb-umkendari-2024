@@ -1,0 +1,198 @@
+{
+    "faculties": [
+        {
+            "name": "Fakultas Teknik",
+            "programs": [
+                {
+                    "name": "Teknik Lingkungan",
+                    "registration_fee": 300000,
+                    "orientation_fee": 1750000,
+                    "tuition_fee": 3500000,
+                    "installments": [1500000, 1500000, 500000]
+                },
+                {
+                    "name": "Teknik Arsitektur",
+                    "registration_fee": 300000,
+                    "orientation_fee": 1750000,
+                    "tuition_fee": 3500000,
+                    "installments": [1500000, 1500000, 500000]
+                },
+                {
+                    "name": "Teknik Sipil",
+                    "registration_fee": 300000,
+                    "orientation_fee": 1750000,
+                    "tuition_fee": 3750000,
+                    "installments": [1500000, 1500000, 500000]
+                },
+                {
+                    "name": "Sistem dan Teknologi Informasi",
+                    "registration_fee": 300000,
+                    "orientation_fee": 1750000,
+                    "tuition_fee": 6000000,
+                    "installments": [1500000, 1500000, 500000]
+                },
+                {
+                    "name": "Teknik/Rekayasa Pertambangan",
+                    "registration_fee": 300000,
+                    "orientation_fee": 1750000,
+                    "tuition_fee": 3750000,
+                    "installments": [1500000, 1500000, 500000]
+                },
+                {
+                    "name": "Teknik Kimia",
+                    "registration_fee": 300000,
+                    "orientation_fee": 1750000,
+                    "tuition_fee": 0,
+                    "installments": [0, 0, 0]
+                }
+            ]
+        },
+        {
+            "name": "Fakultas Pertanian",
+            "programs": [
+                {
+                    "name": "Agribisnis",
+                    "registration_fee": 300000,
+                    "orientation_fee": 1750000,
+                    "tuition_fee": 2200000,
+                    "installments": [1500000, 1500000, 500000]
+                },
+                {
+                    "name": "Teknologi Industri Pertanian",
+                    "registration_fee": 300000,
+                    "orientation_fee": 1750000,
+                    "tuition_fee": 0,
+                    "installments": [0, 0, 0]
+                }
+            ]
+        },
+        {
+            "name": "Fakultas Perikanan dan Ilmu Kelautan",
+            "programs": [
+                {
+                    "name": "Teknologi Hasil Perikanan",
+                    "registration_fee": 300000,
+                    "orientation_fee": 1750000,
+                    "tuition_fee": 2050000,
+                    "installments": [1500000, 1500000, 500000]
+                },
+                {
+                    "name": "Pemanfaatan Sumber Daya Perikanan",
+                    "registration_fee": 300000,
+                    "orientation_fee": 1750000,
+                    "tuition_fee": 2050000,
+                    "installments": [1500000, 1500000, 500000]
+                }
+            ]
+        },
+        {
+            "name": "Fakultas Ilmu Sosial dan Ilmu Politik",
+            "programs": [
+                {
+                    "name": "Ilmu Pemerintahan",
+                    "registration_fee": 300000,
+                    "orientation_fee": 1750000,
+                    "tuition_fee": 2700000,
+                    "installments": [1500000, 1500000, 500000]
+                },
+                {
+                    "name": "Desain Komunikasi Visual",
+                    "registration_fee": 300000,
+                    "orientation_fee": 1750000,
+                    "tuition_fee": 0,
+                    "installments": [0, 0, 0]
+                }
+            ]
+        },
+        {
+            "name": "Fakultas Ekonomi dan Bisnis Islam",
+            "programs": [
+                {
+                    "name": "Manajemen",
+                    "registration_fee": 300000,
+                    "orientation_fee": 1750000,
+                    "tuition_fee": 3150000,
+                    "installments": [1500000, 1500000, 500000]
+                },
+                {
+                    "name": "Bisnis Digital",
+                    "registration_fee": 300000,
+                    "orientation_fee": 1750000,
+                    "tuition_fee": 3500000,
+                    "installments": [1500000, 1500000, 500000]
+                }
+            ]
+        },
+        {
+            "name": "Fakultas Hukum",
+            "programs": [
+                {
+                    "name": "Ilmu Hukum",
+                    "registration_fee": 300000,
+                    "orientation_fee": 1750000,
+                    "tuition_fee": 3100000,
+                    "installments": [1500000, 1500000, 500000]
+                }
+            ]
+        },
+        {
+            "name": "Fakultas Keguruan dan Ilmu Pendidikan",
+            "programs": [
+                {
+                    "name": "Administrasi Pendidikan",
+                    "registration_fee": 300000,
+                    "orientation_fee": 1750000,
+                    "tuition_fee": 2500000,
+                    "installments": [1500000, 1500000, 500000]
+                },
+                {
+                    "name": "Pendidikan Bahasa Inggris",
+                    "registration_fee": 300000,
+                    "orientation_fee": 1750000,
+                    "tuition_fee": 2500000,
+                    "installments": [1500000, 1500000, 500000]
+                },
+                {
+                    "name": "Pendidikan Guru Pendidikan Anak Usia Dini",
+                    "registration_fee": 300000,
+                    "orientation_fee": 1750000,
+                    "tuition_fee": 2650000,
+                    "installments": [1500000, 1500000, 500000]
+                },
+                {
+                    "name": "Pendidikan Masyarakat/Non Formal",
+                    "registration_fee": 300000,
+                    "orientation_fee": 1750000,
+                    "tuition_fee": 2000000,
+                    "installments": [1500000, 1500000, 500000]
+                },
+                {
+                    "name": "Pendidikan Teknologi Informasi",
+                    "registration_fee": 300000,
+                    "orientation_fee": 1750000,
+                    "tuition_fee": 3500000,
+                    "installments": [1500000, 1500000, 500000]
+                },
+                {
+                    "name": "Pendidikan Matematika",
+                    "registration_fee": 300000,
+                    "orientation_fee": 1750000,
+                    "tuition_fee": 0,
+                    "installments": [0, 0, 0]
+                }
+            ]
+        },
+        {
+            "name": "Fakultas Agama Islam",
+            "programs": [
+                {
+                    "name": "Pendidikan Agama Islam",
+                    "registration_fee": 300000,
+                    "orientation_fee": 1750000,
+                    "tuition_fee": 2000000,
+                    "installments": [1500000, 1500000, 500000]
+                }
+            ]
+        }
+    ]
+}
