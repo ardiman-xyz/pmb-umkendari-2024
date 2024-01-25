@@ -3,12 +3,20 @@ import { Head, router } from "@inertiajs/react";
 
 import faculties from "@/data/graduate.json";
 import { ChevronRight, Download } from "lucide-react";
+import { Button } from "@/Components/ui/button";
 
 const Index = () => {
     const { postgraduate_programs } = faculties;
 
     const handleRedirect = (programs: string) => {
         return router.get(route(programs));
+    };
+
+    const handleDownload = () => {
+        const link = document.createElement("a");
+        link.href = "/file/admisi.pdf";
+        link.download = "admisi_2024.pdf";
+        link.click();
     };
 
     return (
@@ -70,6 +78,14 @@ const Index = () => {
                                 </table>
                             </div>
                         </div>
+                        <div className="flex">
+                            <Button
+                                onClick={handleDownload}
+                                variant="guestButtonDefault"
+                            >
+                                Donwload template
+                            </Button>
+                        </div>
                     </div>
                     <div
                         id="right"
@@ -100,7 +116,7 @@ const Index = () => {
                                 <ChevronRight />
                             </li>
                             <li className="px-4 py-6 border-t bg-red-800 border-white border-opacity-80 text-white flex flex-row items-center gap-x-3 justify-between cursor-pointer ">
-                                Alur pendapaftaran
+                                Alur pendapftaran
                                 <ChevronRight />
                             </li>
                         </ul>

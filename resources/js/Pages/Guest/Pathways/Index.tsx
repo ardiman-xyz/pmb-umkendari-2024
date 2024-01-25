@@ -56,7 +56,7 @@ const Index = () => {
                                 <ChevronRight />
                             </li>
                             <li className="px-4 py-6 border-t bg-red-800 border-white border-opacity-80 text-white flex flex-row items-center gap-x-3 justify-between cursor-pointer ">
-                                Alur pendapaftaran
+                                Alur pendapftaran
                                 <ChevronRight />
                             </li>
                         </ul>

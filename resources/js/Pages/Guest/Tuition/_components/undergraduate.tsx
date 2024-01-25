@@ -14,6 +14,13 @@ import { Download } from "lucide-react";
 const Undergraduate = () => {
     const { faculties } = undgraduates;
 
+    const handleDownload = () => {
+        const link = document.createElement("a");
+        link.href = "/file/payment_undegraduate.pdf";
+        link.download = "payment_undegraduate.pdf";
+        link.click();
+    };
+
     return (
         <>
             <h2 className="md:text-3xl text-xl font-bold mb-6 capitalize">
@@ -135,7 +142,7 @@ const Undergraduate = () => {
 
             <hr />
             <div className="mt-4">
-                <Button variant="guestButtonDefault">
+                <Button variant="guestButtonDefault" onClick={handleDownload}>
                     Unduh template biaya sarajana
                     <Download className="h-4 w-4 ml-3" />
                 </Button>

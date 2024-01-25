@@ -13,6 +13,13 @@ import { Download } from "lucide-react";
 const PostGraduate = () => {
     const { faculties } = postgraduate;
 
+    const handleDownload = () => {
+        const link = document.createElement("a");
+        link.href = "/file/payment_pasca.xlsx";
+        link.download = "payment_pasca.xlsx";
+        link.click();
+    };
+
     return (
         <div>
             <h2 className="md:text-3xl text-xl font-bold mb-6 capitalize">
@@ -161,7 +168,7 @@ const PostGraduate = () => {
 
             <hr />
             <div className="mt-4">
-                <Button variant="guestButtonDefault">
+                <Button variant="guestButtonDefault" onClick={handleDownload}>
                     Unduh template biaya magister
                     <Download className="h-4 w-4 ml-3" />
                 </Button>
