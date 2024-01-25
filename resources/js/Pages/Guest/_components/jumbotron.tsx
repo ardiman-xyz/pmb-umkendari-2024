@@ -21,7 +21,9 @@ const Jumbotron = () => {
                 spaceBetween={50}
                 slidesPerView={1}
                 pagination={{ clickable: true }}
-                autoplay
+                autoplay={{
+                    delay: 4000,
+                }}
             >
                 <SwiperSlide>
                     <img
@@ -30,7 +32,7 @@ const Jumbotron = () => {
                             height: "100%",
                             objectFit: "cover",
                         }}
-                        src="/images/sliders/1.png"
+                        src="/images/sliders/banner_0.jpg"
                         alt="slider"
                     />
                 </SwiperSlide>
@@ -41,7 +43,7 @@ const Jumbotron = () => {
                             height: "100%",
                             objectFit: "cover",
                         }}
-                        src="/images/sliders/2.png"
+                        src="/images/sliders/banner_1.jpg"
                         alt="slider"
                     />
                 </SwiperSlide>
@@ -52,7 +54,18 @@ const Jumbotron = () => {
                             height: "100%",
                             objectFit: "cover",
                         }}
-                        src="/images/sliders/3.png"
+                        src="/images/sliders/banner_2.jpg"
+                        alt="slider"
+                    />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                        }}
+                        src="/images/sliders/banner_3.jpg"
                         alt="slider"
                     />
                 </SwiperSlide>

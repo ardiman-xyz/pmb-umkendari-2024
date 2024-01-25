@@ -6,7 +6,6 @@ import Programs from "./_components/programs";
 import Facility from "./_components/facility";
 import Achievements from "./_components/achievements";
 import Procedure from "./_components/procedure";
-import Footer from "./_components/footer";
 
 export default function Home({
     auth,
@@ -32,9 +31,6 @@ export default function Home({
 
                     <section className="mt-[100px] container mx-auto">
                         <Procedure />
-                    </section>
-                    <section>
-                        <Footer />
                     </section>
                 </div>
             </Guest>

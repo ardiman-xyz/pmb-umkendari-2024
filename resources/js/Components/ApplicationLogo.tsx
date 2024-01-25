@@ -8,7 +8,7 @@ export default function ApplicationLogo() {
     return (
         <div className="cursor-pointer" onClick={handleRedirect}>
             <img
-                src="/images/logo.png"
+                src="/images/logo.svg"
                 alt="Logo"
                 className="md:w-[300px] w-[200px]"
             />

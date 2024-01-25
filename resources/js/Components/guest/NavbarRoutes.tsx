@@ -8,18 +8,34 @@ import {
 } from "@/Components/ui/navigation-menu";
 import React from "react";
 import { cn } from "@/lib/utils";
-import { Link } from "@inertiajs/react";
+import { Link, router } from "@inertiajs/react";
 
 export const NavbarRoutes = () => {
+    const handleRedirect = (programs: string) => {
+        return router.get(route(programs));
+    };
+
+    const handleClickShareWa = () => {
+        let messageDone = `Assalamu'alaikum warahmatullahi wabarokatuh.`;
+        const hotlineNumber = "+6282249910033";
+
+        let url = `https://wa.me/${hotlineNumber}?text=${messageDone}`;
+
+        window.open(url);
+    };
+
     return (
         <NavigationMenu className="pl-10 md:block hidden">
             <NavigationMenuList>
                 <NavigationMenuItem>
-                    <Link href="/docs">
+                    <a
+                        href="https://umkendari.ac.id/tentang-umk"
+                        target="_blank"
+                    >
                         <NavigationMenuLink className="font-bold">
                             PROFIL
                         </NavigationMenuLink>
-                    </Link>
+                    </a>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <NavigationMenuTrigger className="font-bold">
@@ -27,7 +43,10 @@ export const NavbarRoutes = () => {
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                            <ListItem title="Persyaratan">
+                            <ListItem
+                                onClick={() => handleRedirect("pathways.index")}
+                                title="Persyaratan"
+                            >
                                 Informasi mengenai persyaratan umum dan khusus
                                 yang diperlukan untuk mendaftar.
                             </ListItem>
@@ -37,7 +56,10 @@ export const NavbarRoutes = () => {
                                 pendaftaran calon mahasiswa baru.
                             </ListItem>
 
-                            <ListItem title="Biaya pendidikan">
+                            <ListItem
+                                title="Biaya pendidikan"
+                                onClick={() => handleRedirect("tuition.index")}
+                            >
                                 Daftar rinci biaya kuliah, SPP, dan biaya-biaya
                                 lain yang harus dibayarkan oleh mahasiswa.
                             </ListItem>
@@ -45,18 +67,19 @@ export const NavbarRoutes = () => {
                     </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <Link href="/docs">
+                    <Link href={route("pathways.index")}>
                         <NavigationMenuLink className="font-bold">
                             BEASISWA
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem className="pl-6">
-                    <Link href="/docs">
-                        <NavigationMenuLink className="font-bold">
-                            FAQ
-                        </NavigationMenuLink>
-                    </Link>
+                    <NavigationMenuLink
+                        onClick={handleClickShareWa}
+                        className="font-bold cursor-pointer"
+                    >
+                        FAQ
+                    </NavigationMenuLink>
                 </NavigationMenuItem>
             </NavigationMenuList>
         </NavigationMenu>

@@ -1,9 +1,7 @@
-import React from "react";
-
 const Procedure = () => {
     return (
         <div>
-            <img src="/images/alur_pendaftaran.png" alt="alur pendaftaran" />
+            <img src="/svg/alur_pendaftaran_2024.svg" alt="alur pendaftaran" />
         </div>
     );
 };
