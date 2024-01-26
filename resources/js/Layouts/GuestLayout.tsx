@@ -14,7 +14,7 @@ export default function Guest({ children }: PropsWithChildren) {
     };
 
     return (
-        <div className="min-h-screen w-full bg-gray-100 font-inter">
+        <div className="min-h-screen w-full bg-white font-inter">
             <Navbar />
 
             <main>{children}</main>

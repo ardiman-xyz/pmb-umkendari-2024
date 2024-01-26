@@ -4,10 +4,18 @@ import Guest from "@/Layouts/GuestLayout";
 
 import FilePdf from "../../../../../public/file/jenis_persyaratan_beasiswa.pdf";
 import { ChevronRight, Download } from "lucide-react";
+import { Button } from "@/Components/ui/button";
 
 const Index = () => {
     const handleRedirect = (programs: string) => {
         return router.get(route(programs));
+    };
+
+    const handleDownload = () => {
+        const link = document.createElement("a");
+        link.href = "/file/jenis_persyaratan_beasiswa.pdf";
+        link.download = "jenis_persyaratan_beasiswa_2024.pdf";
+        link.click();
     };
 
     return (
@@ -29,6 +37,17 @@ const Index = () => {
                             width={"100%"}
                             height={800}
                         ></iframe>
+
+                        <hr />
+                        <div className="mt-4">
+                            <Button
+                                variant="guestButtonDefault"
+                                onClick={handleDownload}
+                            >
+                                Unduh template beasiswa dan jalur pendaftaran
+                                <Download className="h-4 w-4 ml-3" />
+                            </Button>
+                        </div>
                     </div>
                     <div className="md:w-1/5 w-full pb-10 md:mt-0">
                         <ul className="w-full  flex flex-col">
