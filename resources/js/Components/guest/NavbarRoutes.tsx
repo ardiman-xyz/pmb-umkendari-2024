@@ -38,7 +38,7 @@ export const NavbarRoutes = () => {
                     </a>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className="font-bold">
+                    <NavigationMenuTrigger className="font-bold text-md">
                         ADMISI
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -69,7 +69,7 @@ export const NavbarRoutes = () => {
                 <NavigationMenuItem>
                     <Link href={route("pathways.index")}>
                         <NavigationMenuLink className="font-bold">
-                            BEASISWA
+                            JALUR MASUK
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>

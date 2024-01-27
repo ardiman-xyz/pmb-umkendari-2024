@@ -36,9 +36,8 @@ const UndergraduatePage = () => {
                     Fakultas & Program studi
                 </h2>
                 <p className="text-sm mb-4 text-muted-foreground">
-                    Berikut adalah daftar dari beberapa program studi yang kami
-                    tawarkan. Setiap program studi memiliki biaya pendidikan per
-                    periode (BPP) dan status akreditasi.
+                    Berikut ini daftar program studi yang ditawarkan di
+                    Universitas Muhammadiyah Kendari
                 </p>
 
                 <div className="w-full flex md:flex-row flex-col mt-10 md:gap-x-20 gap-x-0">
@@ -54,7 +53,7 @@ const UndergraduatePage = () => {
                                         <thead>
                                             <tr>
                                                 <th className="px-4 py-2 text-left border border-zinc-500">
-                                                    Nama
+                                                    Program Studi
                                                 </th>
                                                 <th className="px-4 py-2  border border-zinc-500 text-center">
                                                     Akreditasi

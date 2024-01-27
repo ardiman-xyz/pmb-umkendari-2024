@@ -42,8 +42,8 @@
                     "name": "Teknik Kimia",
                     "registration_fee": 300000,
                     "orientation_fee": 1750000,
-                    "tuition_fee": 0,
-                    "installments": [0, 0, 0]
+                    "tuition_fee": 3500000,
+                    "installments": [1500000, 1500000, 500000]
                 }
             ]
         },
@@ -61,8 +61,8 @@
                     "name": "Teknologi Industri Pertanian",
                     "registration_fee": 300000,
                     "orientation_fee": 1750000,
-                    "tuition_fee": 0,
-                    "installments": [0, 0, 0]
+                    "tuition_fee": 2200000,
+                    "installments": [1500000, 1500000, 500000]
                 }
             ]
         },
@@ -99,8 +99,8 @@
                     "name": "Desain Komunikasi Visual",
                     "registration_fee": 300000,
                     "orientation_fee": 1750000,
-                    "tuition_fee": 0,
-                    "installments": [0, 0, 0]
+                    "tuition_fee": 6000000,
+                    "installments": [1500000, 1500000, 500000]
                 }
             ]
         },
@@ -174,9 +174,9 @@
                     "installments": [1500000, 1500000, 500000]
                 },
                 {
-                    "name": "Pendidikan Matematika",
-                    "registration_fee": 300000,
-                    "orientation_fee": 1750000,
+                    "name": "Pendidikan Matematika (Menunggu SK, dari Kemendikbudristek RI)",
+                    "registration_fee": 0,
+                    "orientation_fee": 0,
                     "tuition_fee": 0,
                     "installments": [0, 0, 0]
                 }

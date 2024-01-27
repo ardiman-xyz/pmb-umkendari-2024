@@ -9,8 +9,8 @@
                     "almamater_fee": 600000,
                     "tuition_fee": 6500000,
                     "installments": [1500000, 1500000, 500000],
-                    "matriculation_fee": 6000000,
-                    "exam_fee": 500000
+                    "matriculation_fee": 0,
+                    "exam_fee": 6000000
                 },
                 {
                     "name": "Magister Administrasi Pendidikan",
@@ -18,8 +18,8 @@
                     "almamater_fee": 600000,
                     "tuition_fee": 6000000,
                     "installments": [1500000, 1500000, 500000],
-                    "matriculation_fee": 4500000,
-                    "exam_fee": 500000
+                    "matriculation_fee": 0,
+                    "exam_fee": 4500000
                 },
                 {
                     "name": "Magister Agribisnis",
@@ -36,8 +36,8 @@
                     "almamater_fee": 1500000,
                     "tuition_fee": 6500000,
                     "installments": [1500000, 1500000, 500000],
-                    "matriculation_fee": 6000000,
-                    "exam_fee": 500000
+                    "matriculation_fee": 0,
+                    "exam_fee": 6000000
                 },
                 {
                     "name": "Magister Ilmu Pemerintahan",
@@ -45,8 +45,8 @@
                     "almamater_fee": 600000,
                     "tuition_fee": 6000000,
                     "installments": [1500000, 1500000, 500000],
-                    "matriculation_fee": 4500000,
-                    "exam_fee": 500000
+                    "matriculation_fee": 0,
+                    "exam_fee": 4500000
                 },
                 {
                     "name": "Magister Pendidikan Bahasa Inggris",
@@ -54,8 +54,8 @@
                     "almamater_fee": 600000,
                     "tuition_fee": 6500000,
                     "installments": [1500000, 1500000, 500000],
-                    "matriculation_fee": 6000000,
-                    "exam_fee": 500000
+                    "matriculation_fee": 0,
+                    "exam_fee": 6000000
                 }
             ]
         }

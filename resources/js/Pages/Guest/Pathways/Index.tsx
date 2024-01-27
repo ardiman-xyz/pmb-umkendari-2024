@@ -24,7 +24,7 @@ const Index = () => {
             <div className="h-[369px] bg-[#FFEBEB] bg-custom-image  bg-cover bg-center bg-no-repeat">
                 <div className="w-full container mx-auto flex  items-center h-full">
                     <h1 className="font-extrabold text-4xl text-white lead uppercase">
-                        Persyaratan & Jenis Beasiswa
+                        Jalur Masuk dan Persyaratan
                     </h1>
                 </div>
             </div>

@@ -143,7 +143,7 @@ const Undergraduate = () => {
             <hr />
             <div className="mt-4">
                 <Button variant="guestButtonDefault" onClick={handleDownload}>
-                    Unduh template biaya sarajana
+                    Unduh template biaya sarjana
                     <Download className="h-4 w-4 ml-3" />
                 </Button>
             </div>

@@ -31,14 +31,7 @@ const Index = () => {
             </div>
 
             <div className="container mx-auto mt-10">
-                <h2 className="text-3xl font-bold mb-2">
-                    Fakultas & Program studi
-                </h2>
-                <p className="text-sm mb-4 text-muted-foreground">
-                    Berikut adalah daftar dari beberapa program studi yang kami
-                    tawarkan. Setiap program studi memiliki biaya pendidikan per
-                    periode (BPP) dan status akreditasi.
-                </p>
+                <h2 className="text-3xl font-bold mb-2">Program Studi</h2>
 
                 <div className="w-full flex md:flex-row flex-col md:gap-x-20 gap-x-0">
                     <div className="md:w-2/3 w-full pb-10">
@@ -48,13 +41,13 @@ const Index = () => {
                                     <thead>
                                         <tr>
                                             <th className="px-4 py-2 text-left border border-zinc-500">
-                                                Nama
+                                                Program Studi
                                             </th>
                                             <th className="px-4 py-2  border border-zinc-500 text-center">
                                                 Akreditasi
                                             </th>
                                             <th className="px-4 py-2 border border-zinc-500 text-center">
-                                                Kuota
+                                                Daya Tampung
                                             </th>
                                         </tr>
                                     </thead>
@@ -68,7 +61,7 @@ const Index = () => {
                                                     <td className="px-4 py-2 border border-zinc-500 w-[100px] text-center">
                                                         {program.accreditation}
                                                     </td>
-                                                    <td className="px-4 py-2 border border-zinc-500 w-[100px] text-center">
+                                                    <td className="px-4 py-2 border border-zinc-500 w-[200px] text-center">
                                                         {program.quota}
                                                     </td>
                                                 </tr>
@@ -78,14 +71,14 @@ const Index = () => {
                                 </table>
                             </div>
                         </div>
-                        <div className="flex">
+                        {/* <div className="flex">
                             <Button
                                 onClick={handleDownload}
                                 variant="guestButtonDefault"
                             >
                                 Donwload template
                             </Button>
-                        </div>
+                        </div> */}
                     </div>
                     <div
                         id="right"
