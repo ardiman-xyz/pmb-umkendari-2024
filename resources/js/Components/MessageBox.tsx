@@ -34,7 +34,9 @@ const MessageBox = () => {
         <div className="fixed bottom-10 right-5 flex items-center flex-col z-50">
             {!isOpen && (
                 <>
-                    <p className="text-sm mb-2 shadow-sm">Butuh bantuan ?</p>
+                    <p className="text-sm mb-2 shadow-sm mix-blend-difference">
+                        Butuh bantuan ?
+                    </p>
                     <div
                         onClick={toggleModal}
                         title="Hubungi kami"
