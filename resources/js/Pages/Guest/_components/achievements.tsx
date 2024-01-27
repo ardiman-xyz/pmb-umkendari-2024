@@ -1,19 +1,12 @@
-import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-import { useMediaQuery } from "react-responsive";
 
 import "swiper/css";
 import "swiper/css/pagination";
 
-import { Mousewheel, Autoplay, Pagination } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import { Button } from "@/Components/ui/button";
-import { ChevronDown, ChevronRight } from "lucide-react";
 
 const Achievements = () => {
-    const isTablet = useMediaQuery({ minWidth: 640 });
-    const isDesktop = useMediaQuery({ minWidth: 1024 });
-
     const numbers = Array.from({ length: 14 }, (_, i) => i + 1);
 
     const handleRedirect = () => {

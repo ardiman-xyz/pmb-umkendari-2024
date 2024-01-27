@@ -6,6 +6,8 @@ import "swiper/css/pagination";
 
 import { Pagination } from "swiper/modules";
 
+const numbers = Array.from({ length: 11 }, (_, i) => i + 1);
+
 const Facility = () => {
     return (
         <div className="flex md:flex-row flex-col gap-y-3 md:gap-y-0">
@@ -28,50 +30,19 @@ const Facility = () => {
                     modules={[Pagination]}
                     className="mySwiper"
                 >
-                    <SwiperSlide>
-                        <img
-                            style={{
-                                width: "100%",
-                                height: "100%",
-                                objectFit: "cover",
-                            }}
-                            src="/images/facilities/1.png"
-                            alt="slider"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img
-                            style={{
-                                width: "100%",
-                                height: "100%",
-                                objectFit: "cover",
-                            }}
-                            src="/images/facilities/2.png"
-                            alt="slider"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img
-                            style={{
-                                width: "100%",
-                                height: "100%",
-                                objectFit: "cover",
-                            }}
-                            src="/images/facilities/3.png"
-                            alt="slider"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img
-                            style={{
-                                width: "100%",
-                                height: "100%",
-                                objectFit: "cover",
-                            }}
-                            src="/images/facilities/4.png"
-                            alt="slider"
-                        />
-                    </SwiperSlide>
+                    {numbers.map((number) => (
+                        <SwiperSlide key={number}>
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={`/images/facilities/${number}.svg`}
+                                alt="slider"
+                            />
+                        </SwiperSlide>
+                    ))}
                 </Swiper>
             </div>
         </div>
