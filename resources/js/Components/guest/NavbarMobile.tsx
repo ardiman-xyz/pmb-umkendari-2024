@@ -7,6 +7,7 @@ import {
     SheetTrigger,
 } from "@/Components/ui/sheet";
 import { router } from "@inertiajs/react";
+import { Button } from "../ui/button";
 
 export const NavbarMobile = () => {
     const handleRedirect = (programs: string) => {
@@ -24,6 +25,11 @@ export const NavbarMobile = () => {
 
     return (
         <div className="md:hidden flex">
+            <div className="flex items-center ml-10">
+                <Button variant="guestButtonDefault" size="lg">
+                    Daftar
+                </Button>
+            </div>
             <Sheet>
                 <SheetTrigger asChild>
                     <div className="p-2 rounded-full cursor-pointer hover:bg-red-800 group transition-colors">

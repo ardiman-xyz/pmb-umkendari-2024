@@ -14,5 +14,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+// require __DIR__.'/auth.php';
+
+Route::get("/login", function() {
+    return abort(404);
+});
 require __DIR__.'/guest.php';

@@ -10,7 +10,7 @@ const Navbar = () => {
 
     return (
         <div className="w-full h-[84px] bg-white ">
-            <div className="w-full h-full flex container max-w-screen-2xl items-center ">
+            <div className="w-full h-full flex md:container md:max-w-screen-2xl items-center ">
                 <div className="flex justify-between items-center w-full">
                     <div className="flex flex-row items-center">
                         <ApplicationLogo />

@@ -14,7 +14,14 @@ export default function Home({
 }: PageProps<{ laravelVersion: string; phpVersion: string }>) {
     return (
         <>
-            <Head title="Welcome" />
+            <Head>
+                <title>Selamat datang</title>
+                <meta
+                    head-key="description"
+                    name="description"
+                    content="This is a page specific description"
+                />
+            </Head>
             <Guest>
                 <div>
                     <Jumbotron />
