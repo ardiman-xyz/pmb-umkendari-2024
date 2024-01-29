@@ -36,7 +36,7 @@ const Achievements = () => {
 
                         <Button
                             onClick={handleRedirect}
-                            className="md:mt-20 mt-5 mb-2 px-20 py-8 capitalize"
+                            className="md:mt-20 mt-5 mb-2 px-20 py-8 capitalize w-full md:w-max"
                             variant="guestButtonDefault"
                         >
                             Selengkapnya

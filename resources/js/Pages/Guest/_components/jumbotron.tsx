@@ -32,7 +32,7 @@ const Jumbotron = () => {
                             height: "100%",
                             objectFit: "cover",
                         }}
-                        src="/images/sliders/banner_0.jpg"
+                        src="/images/sliders/banner_0.webp"
                         alt="slider"
                     />
                 </SwiperSlide>
@@ -43,7 +43,7 @@ const Jumbotron = () => {
                             height: "100%",
                             objectFit: "cover",
                         }}
-                        src="/images/sliders/banner_1.jpg"
+                        src="/images/sliders/banner_1.webp"
                         alt="slider"
                     />
                 </SwiperSlide>
@@ -54,7 +54,7 @@ const Jumbotron = () => {
                             height: "100%",
                             objectFit: "cover",
                         }}
-                        src="/images/sliders/banner_2.jpg"
+                        src="/images/sliders/banner_2.webp"
                         alt="slider"
                     />
                 </SwiperSlide>
@@ -65,7 +65,7 @@ const Jumbotron = () => {
                             height: "100%",
                             objectFit: "cover",
                         }}
-                        src="/images/sliders/banner_3.jpg"
+                        src="/images/sliders/banner_3.webp"
                         alt="slider"
                     />
                 </SwiperSlide>

@@ -44,7 +44,7 @@ const Index = () => {
                                 variant="guestButtonDefault"
                                 onClick={handleDownload}
                             >
-                                Unduh template beasiswa dan jalur pendaftaran
+                                Unduh Jalur Masuk
                                 <Download className="h-4 w-4 ml-3" />
                             </Button>
                         </div>

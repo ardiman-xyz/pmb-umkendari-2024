@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 
 const numbers = Array.from({ length: 11 }, (_, i) => i + 1);
 
@@ -27,7 +27,8 @@ const Facility = () => {
                     pagination={{
                         clickable: true,
                     }}
-                    modules={[Pagination]}
+                    modules={[Pagination, Autoplay]}
+                    autoplay
                     className="mySwiper"
                 >
                     {numbers.map((number) => (
@@ -38,7 +39,7 @@ const Facility = () => {
                                     height: "100%",
                                     objectFit: "cover",
                                 }}
-                                src={`/images/facilities/${number}.svg`}
+                                src={`/images/facilities/${number}.webp`}
                                 alt="slider"
                             />
                         </SwiperSlide>

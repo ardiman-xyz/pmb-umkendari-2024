@@ -1,8 +1,7 @@
-import { ChevronDown, ChevronRight, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import {
     Sheet,
     SheetContent,
-    SheetDescription,
     SheetHeader,
     SheetTitle,
     SheetTrigger,
@@ -73,7 +72,7 @@ export const NavbarMobile = () => {
                             onClick={() => handleRedirect("pathways.index")}
                             className="font-bold flex items-center justify-between cursor-pointer"
                         >
-                            <span>BEASISWA</span>
+                            <span>JALUR MASUK</span>
                         </li>
                         <li
                             onClick={handleClickShareWa}

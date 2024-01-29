@@ -21,11 +21,11 @@ export default function Home({
                     <section className="mt-10 container mx-auto">
                         <Programs />
                     </section>
-                    <section className="mt-[114px] container mx-auto">
+                    <section className="md:mt-[114px] mt-6 container mx-auto">
                         <Facility />
                     </section>
 
-                    <section className="mt-[200px] ">
+                    <section className="md:mt-[200px] mt-6">
                         <Achievements />
                     </section>
 
