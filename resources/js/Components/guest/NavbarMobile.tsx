@@ -23,10 +23,18 @@ export const NavbarMobile = () => {
         window.open(url);
     };
 
+    const handleRedirect1 = () => {
+        window.open("https://pmb.umkendari.ac.id/", "_blank");
+    };
+
     return (
         <div className="md:hidden flex">
             <div className="flex items-center ml-10">
-                <Button variant="guestButtonDefault" size="lg">
+                <Button
+                    variant="guestButtonDefault"
+                    size="lg"
+                    onClick={handleRedirect1}
+                >
                     Daftar
                 </Button>
             </div>
