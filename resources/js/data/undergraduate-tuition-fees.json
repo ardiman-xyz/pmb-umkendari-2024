@@ -191,6 +191,13 @@
                     "orientation_fee": 1750000,
                     "tuition_fee": 2000000,
                     "installments": [1500000, 1500000, 500000]
+                },
+                {
+                    "name": "Psikologi Islam",
+                    "registration_fee": 300000,
+                    "orientation_fee": 1750000,
+                    "tuition_fee": 2000000,
+                    "installments": [1500000, 1500000, 500000]
                 }
             ]
         }

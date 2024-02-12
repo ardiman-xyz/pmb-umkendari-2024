@@ -147,6 +147,11 @@
                     "name": "Pendidikan Agama Islam",
                     "accreditation": "B",
                     "quota": 135
+                },
+                {
+                    "name": "Psikologi Islam",
+                    "accreditation": "Baik",
+                    "quota": 60
                 }
             ]
         }
