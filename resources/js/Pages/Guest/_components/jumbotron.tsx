@@ -43,6 +43,17 @@ const Jumbotron = () => {
                             height: "100%",
                             objectFit: "cover",
                         }}
+                        src="/images/sliders/banner_4.webp"
+                        alt="slider"
+                    />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                        }}
                         src="/images/sliders/banner_1.webp"
                         alt="slider"
                     />
