@@ -5,7 +5,7 @@ import { NavbarMobile } from "@/Components/guest/NavbarMobile";
 
 const Navbar = () => {
     const handleRedirect = () => {
-        window.open("https://pmb.umkendari.ac.id/", "_blank");
+        window.open("https://daftar.umkendari.ac.id/", "_blank");
     };
 
     return (
