@@ -24,7 +24,7 @@ export const NavbarMobile = () => {
     };
 
     const handleRedirect1 = () => {
-        window.open("https://pmb.umkendari.ac.id/", "_blank");
+        window.open("https://daftar.umkendari.ac.id/", "_blank");
     };
 
     return (
