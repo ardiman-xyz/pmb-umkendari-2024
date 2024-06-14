@@ -28,10 +28,7 @@ export const NavbarRoutes = () => {
         <NavigationMenu className="pl-10 md:block hidden">
             <NavigationMenuList>
                 <NavigationMenuItem>
-                    <a
-                        href="https://umkendari.ac.id/tentang-umk"
-                        target="_blank"
-                    >
+                    <a href="https://umkendari.ac.id/about" target="_blank">
                         <NavigationMenuLink className="font-bold">
                             PROFIL
                         </NavigationMenuLink>

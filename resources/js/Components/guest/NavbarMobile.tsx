@@ -51,7 +51,7 @@ export const NavbarMobile = () => {
                     <ul className="mt-10 flex flex-col gap-y-4">
                         <li className="font-bold flex items-center justify-between">
                             <a
-                                href="https://umkendari.ac.id/tentang-umk"
+                                href="https://umkendari.ac.id/about"
                                 target="_blank"
                             >
                                 PROFIL
