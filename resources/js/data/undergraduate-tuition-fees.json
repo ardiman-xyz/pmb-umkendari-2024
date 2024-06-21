@@ -99,7 +99,14 @@
                     "name": "Desain Komunikasi Visual",
                     "registration_fee": 300000,
                     "orientation_fee": 1750000,
-                    "tuition_fee": 6000000,
+                    "tuition_fee": 4000000,
+                    "installments": [1500000, 1500000, 500000]
+                },
+                {
+                    "name": "D4 Humas dan Komunikasi Digital",
+                    "registration_fee": 300000,
+                    "orientation_fee": 1750000,
+                    "tuition_fee": 3000000,
                     "installments": [1500000, 1500000, 500000]
                 }
             ]

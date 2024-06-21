@@ -48,7 +48,10 @@ export const NavbarRoutes = () => {
                                 yang diperlukan untuk mendaftar.
                             </ListItem>
 
-                            <ListItem title="Alur pendaftaran">
+                            <ListItem
+                                title="Alur pendaftaran"
+                                onClick={() => handleRedirect("flow.index")}
+                            >
                                 Penjelasan lengkap mengenai tahapan dan proses
                                 pendaftaran calon mahasiswa baru.
                             </ListItem>

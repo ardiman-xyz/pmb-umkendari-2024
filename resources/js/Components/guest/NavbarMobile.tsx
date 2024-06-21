@@ -77,7 +77,10 @@ export const NavbarMobile = () => {
                                 >
                                     Biaya pendidikan
                                 </li>
-                                <li className="py-2 cursor-pointer">
+                                <li
+                                    className="py-2 cursor-pointer"
+                                    onClick={() => handleRedirect("flow.index")}
+                                >
                                     Alur pendaftaran
                                 </li>
                             </ul>

@@ -7,3 +7,4 @@ Route::get('sarjana', [\App\Http\Controllers\Guest\UndergraduateController::clas
 Route::get('pascasarjana', [\App\Http\Controllers\Guest\Graduate::class, "index"])->name("graduate.index");
 Route::get('biaya-pendidikan', [\App\Http\Controllers\Guest\TuitionInformation::class, "index"])->name("tuition.index");
 Route::get('persyaratan', [\App\Http\Controllers\Guest\Pathways::class, "index"])->name("pathways.index");
+Route::get('alur-pendaftaran', [\App\Http\Controllers\Guest\RegistrationFlow::class, "index"])->name("flow.index");

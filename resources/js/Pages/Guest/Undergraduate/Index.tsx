@@ -20,6 +20,13 @@ const UndergraduatePage = () => {
         link.click();
     };
 
+    const handleDownloadBrosur = () => {
+        const link = document.createElement("a");
+        link.href = "/file/admisi-umk-brosur-2024.pdf";
+        link.download = "admisi-umk-brosur-2024.pdf.pdf";
+        link.click();
+    };
+
     return (
         <Guest>
             <Head title="Admisi sarjana" />
@@ -123,14 +130,20 @@ const UndergraduatePage = () => {
                                 Persyaratan
                                 <ChevronRight />
                             </li>
-                            <li className="px-4 py-6 border-t bg-red-800 border-white border-opacity-80 text-white flex flex-row items-center gap-x-3 justify-between cursor-pointer ">
+                            <li
+                                onClick={() => handleRedirect("flow.index")}
+                                className="px-4 py-6 border-t bg-red-800 border-white border-opacity-80 text-white flex flex-row items-center gap-x-3 justify-between cursor-pointer "
+                            >
                                 Alur Pendaftaran
                                 <ChevronRight />
                             </li>
                         </ul>
 
                         <div className=" mt-10 md:mb-0 mb-10">
-                            <div className="w-full cursor-pointer relative">
+                            <div
+                                className="w-full cursor-pointer relative"
+                                onClick={handleDownloadBrosur}
+                            >
                                 <img
                                     src="/images/brosur.png"
                                     alt="logo"
