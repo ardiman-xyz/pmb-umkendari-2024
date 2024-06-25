@@ -15,7 +15,7 @@ const SliderIndex = () => {
     return (
         <Authenticated>
             <Head title="Slider" />
-            <Card>
+            <Card className="border-none">
                 <CardHeader>
                     <CardTitle>Card Title</CardTitle>
                     <CardDescription>Card Description</CardDescription>
