@@ -21,7 +21,7 @@ export default function Authenticated({ children, breadCrumbs }: IProps) {
             <div className="flex h-full w-[234px] flex-col fixed inset-y-0 z-50">
                 <Sidebar />
             </div>
-            <main className="md:pl-[234px] h-full pt-2 container mx-auto max-w-screen-2xl">
+            <main className="md:pl-[234px] h-full pt-4 container mx-auto max-w-screen-2xl">
                 {children}
             </main>
         </div>

@@ -13,6 +13,8 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('slider')->group(function () {
         Route::get('/', [SliderController::class, "index"])->name("slider.index");
+        Route::get('create', [SliderController::class, "create"])->name("slider.create");
+        Route::post('/', [SliderController::class, "store"])->name("slider.store");
     });
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -23,6 +25,6 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::get("/register", function() {
-    return abort(404);
+     abort(404);
 });
 require __DIR__.'/guest.php';

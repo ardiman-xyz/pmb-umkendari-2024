@@ -37,6 +37,30 @@ module.exports = {
                     DEFAULT: "hsl(var(--primary))",
                     foreground: "hsl(var(--primary-foreground))",
                 },
+                secondary: {
+                    DEFAULT: "hsl(var(--secondary))",
+                    foreground: "hsl(var(--secondary-foreground))",
+                },
+                destructive: {
+                    DEFAULT: "hsl(var(--destructive))",
+                    foreground: "hsl(var(--destructive-foreground))",
+                },
+                muted: {
+                    DEFAULT: "hsl(var(--muted))",
+                    foreground: "hsl(var(--muted-foreground))",
+                },
+                accent: {
+                    DEFAULT: "hsl(var(--accent))",
+                    foreground: "hsl(var(--accent-foreground))",
+                },
+                popover: {
+                    DEFAULT: "hsl(var(--popover))",
+                    foreground: "hsl(var(--popover-foreground))",
+                },
+                card: {
+                    DEFAULT: "hsl(var(--card))",
+                    foreground: "hsl(var(--card-foreground))",
+                },
                 blue: {
                     1: "#0144B3",
                     2: "#015EFF",
@@ -51,6 +75,7 @@ module.exports = {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
                 albert: ["Albert Sans", "sans-serif"],
                 jakarta: ["Plus Jakarta Sans", "sans-serif"],
+                inter: ["Inter", "sans-serif"],
             },
             keyframes: {
                 "accordion-down": {

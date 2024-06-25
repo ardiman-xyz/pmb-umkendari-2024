@@ -1,6 +1,6 @@
 import { SharedInertiaData } from "@/types/inertia";
 import { usePage } from "@inertiajs/react";
-import { Image, Layout, Users } from "lucide-react";
+import { Layers, Layout } from "lucide-react";
 import SidebarItem from "@/Components/SiderbarItem";
 
 const Routes = [
@@ -11,7 +11,7 @@ const Routes = [
         requiredRoles: ["Admin"],
     },
     {
-        icon: Image,
+        icon: Layers,
         label: "Slider",
         href: "/slider",
         requiredRoles: ["Admin"],
