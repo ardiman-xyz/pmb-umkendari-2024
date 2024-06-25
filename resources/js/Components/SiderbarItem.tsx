@@ -1,8 +1,7 @@
-import { ChevronDown, Dot, LucideIcon } from "lucide-react";
+import { ChevronDown, LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Link, usePage } from "@inertiajs/react";
 import { useEffect, useState } from "react";
-import { PageProps } from "@/types";
 import { SharedInertiaData } from "@/types/inertia";
 
 interface SidebarItemProps {
@@ -14,12 +13,12 @@ interface SidebarItemProps {
 }
 
 const SidebarItem = ({
-                         icon: Icon,
-                         label,
-                         href,
-                         children,
-                         requiredRoles,
-                     }: SidebarItemProps) => {
+    icon: Icon,
+    label,
+    href,
+    children,
+    requiredRoles,
+}: SidebarItemProps) => {
     const { auth } = usePage<SharedInertiaData>().props;
 
     const page = usePage();
@@ -55,9 +54,8 @@ const SidebarItem = ({
             <Link
                 href={href || "#"}
                 className={cn(
-                    "flex items-center gap-x-2 text-slate-500 text-sm font-[500] pl-6 transition-all ease-in-out hover:text-slate-600 hover:bg-slate-300/20 ",
-                    isActive &&
-                    "text-sky-700 bg-sky-200/20 hover:bg-sky-200/20 hover:text-sky-700"
+                    "flex items-center gap-x-2 text-white text-sm font-[500] pl-6 transition-all ease-in-out  hover:bg-blue-2 ",
+                    isActive && "bg-blue-2"
                 )}
                 onClick={(e) => {
                     if (children) {
@@ -67,18 +65,12 @@ const SidebarItem = ({
                 }}
             >
                 <div className={`flex items-center gap-x-2 py-4`}>
-                    <Icon
-                        size={22}
-                        className={cn(
-                            "text-slate-500",
-                            isActive && "text-sky-700"
-                        )}
-                    />
+                    <Icon size={20} className={cn("text-white")} />
                     {label}
                 </div>
                 <div
                     className={cn(
-                        "ml-auto opacity-0 border-2 border-sky-700 h-full transition-all",
+                        "ml-auto opacity-0 border-2 border-white h-full transition-all",
                         isActive && "opacity-100"
                     )}
                 />
