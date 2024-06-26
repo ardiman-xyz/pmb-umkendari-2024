@@ -11,7 +11,7 @@ const Create = () => {
                 title="Slider Baru"
                 description="Upload gambar dengan ukuran yang benar"
             />
-            <div className="flex gap-x-4 mt-10">
+            <div className="flex lg:flex-row flex-col lg:gap-x-4 gap-x-0 mt-10">
                 <div className="lg:w-1/2 w-full">
                     <FormUpload />
                 </div>
@@ -19,7 +19,7 @@ const Create = () => {
                     <h2>Keterangan :</h2>
                     <ul className="text-sm mt-2 text-muted-foreground list-decimal pl-6">
                         <li>
-                            Ukuran gambar harus <b>: 9000x3000</b> piksel
+                            Ukuran gambar harus <b>: 1200x400</b> piksel
                         </li>
                         <li>Format file yang diterima: Webp, PNG, atau JPG</li>
                         <li>

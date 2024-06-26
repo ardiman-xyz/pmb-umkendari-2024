@@ -10,8 +10,15 @@ import {
     CardTitle,
 } from "@/Components/ui/card";
 import { Button } from "@/Components/ui/button";
+import {Slider} from "@/types";
+import {SliderItem} from "./_components/SliderItem";
 
-const SliderIndex = () => {
+interface SliderProps {
+    sliders: Slider[]
+}
+
+const SliderIndex = ({ sliders }: SliderProps) => {
+
     return (
         <Authenticated>
             <Head title="Slider" />
@@ -28,7 +35,16 @@ const SliderIndex = () => {
                     </Link>
                 </CardHeader>
                 <CardContent>
-                    <p>Card Content</p>
+                    <div className="w-full lg:w-1/2 flex flex-col gap-y-4">
+                        {
+                            sliders.map((slider, index) => (
+                                    <SliderItem
+                                        slider={slider}
+                                        key={index}
+                                    />
+                            ))
+                        }
+                    </div>
                 </CardContent>
             </Card>
         </Authenticated>

@@ -19,7 +19,11 @@ class SliderController extends Controller
 
     public function index(): InertiaResponse
     {
-        return Inertia::render("Slider/Index");
+        $sliders = $this->sliderService->getAll();
+
+        return Inertia::render("Slider/Index", [
+            "sliders" => $sliders
+        ]);
     }
 
     public function create(): InertiaResponse
@@ -27,7 +31,7 @@ class SliderController extends Controller
         return Inertia::render("Slider/Create");
     }
 
-    public function store(StoreSliderRequest $request)
+    public function store(StoreSliderRequest $request): JsonResponse
     {
         $file = $request->file("image");
 
@@ -43,6 +47,28 @@ class SliderController extends Controller
                 'message' => "Gambar berhasil ditambahkan!",
                 'data' => $data
             ], 201);
+
+        }catch (Exception $e)
+        {
+            return response()->json([
+                'status' => false,
+                'message' => $e->getMessage(),
+                'data' => []
+            ], 400);
+        }
+    }
+
+    public function destroy(string $id): JsonResponse
+    {
+        try {
+
+            $data = $this->sliderService->delete($id);
+
+            return response()->json([
+                'status' => false,
+                'message' => "Slider berhasil dihapus",
+                'data' => $data
+            ]);
 
         }catch (Exception $e)
         {
