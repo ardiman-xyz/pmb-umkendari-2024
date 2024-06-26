@@ -18,6 +18,12 @@ Route::middleware('auth')->group(function () {
         Route::delete('{id}', [SliderController::class, "destroy"])->name("slider.destroy");
     });
 
+    Route::prefix('profile')->group(function () {
+        Route::prefix('facilities')->group(function () {
+            Route::get('/', [\App\Http\Controllers\FacilityController::class, "index"])->name("facility.index");
+        });
+    });
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

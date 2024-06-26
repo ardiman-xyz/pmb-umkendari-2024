@@ -1,6 +1,6 @@
 import { SharedInertiaData } from "@/types/inertia";
 import { usePage } from "@inertiajs/react";
-import { Copyright, InfoIcon, LogOut, UserCircle } from "lucide-react";
+import {Copyright, InfoIcon, LogOut, Settings, UserCircle} from "lucide-react";
 import SidebarItem from "@/Components/SiderbarItem";
 
 export const SidebarBottom = () => {
@@ -17,6 +17,12 @@ export const SidebarBottom = () => {
             icon: UserCircle,
             label: "user",
             href: "/users",
+        },
+        {
+            icon: Settings,
+            label: "Pengaturan",
+            href: "/settings",
+            requiredRoles: ["Admin"],
         },
         {
             icon: LogOut,

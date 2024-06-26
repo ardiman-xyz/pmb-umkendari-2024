@@ -1,6 +1,6 @@
 import { SharedInertiaData } from "@/types/inertia";
 import { usePage } from "@inertiajs/react";
-import { Layers, Layout } from "lucide-react";
+import {Dot, Layers, Layout, Megaphone, SchoolIcon} from "lucide-react";
 import SidebarItem from "@/Components/SiderbarItem";
 
 const Routes = [
@@ -14,6 +14,32 @@ const Routes = [
         icon: Layers,
         label: "Slider",
         href: "/slider",
+        requiredRoles: ["Admin"],
+    },
+    {
+        icon: SchoolIcon,
+        label: "Profil",
+        href: "/profiles",
+        requiredRoles: ["Admin"],
+        children: [
+            {
+                icon: Dot,
+                label: "Fasilitas",
+                href: "/profile/facilities",
+                requiredRoles: ["Admin"],
+            },
+            {
+                icon: Dot,
+                label: "Prestasi",
+                href: "/profile/achievements",
+                requiredRoles: ["Admin"],
+            },
+        ]
+    },
+    {
+        icon: Megaphone ,
+        label: "Admisi",
+        href: "/admission",
         requiredRoles: ["Admin"],
     },
 ];
@@ -36,6 +62,7 @@ const SidebarRoutes = () => {
                             href={route.href}
                             label={route.label}
                             requiredRoles={route.requiredRoles}
+                            children={route.children}
                         />
                     )
             )}
