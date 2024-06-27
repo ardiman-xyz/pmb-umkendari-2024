@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Dto\Achievement\StoreAchievement;
 use App\Http\Requests\StoreAchievementRequest;
+use App\Http\Requests\UpdateAchievementRequest;
 use App\Services\AchievementService;
 use Exception;
 use Illuminate\Http\JsonResponse;
@@ -18,7 +19,11 @@ class AchievementController extends Controller
 
     public function index(): \Inertia\Response
     {
-        return Inertia::render("Profiles/Achievement/Index", []);
+        $achievements = $this->achievementService->getAll();
+
+        return Inertia::render("Profiles/Achievement/Index", [
+            "achievements" => $achievements
+        ]);
     }
 
     public function create(): \Inertia\Response
@@ -44,6 +49,52 @@ class AchievementController extends Controller
                 'message' => "data berhasil disimpan!",
                 'data' => $data
             ], 201);
+
+        }catch (Exception $e)
+        {
+            return response()->json([
+                'status' => false,
+                'message' => $e->getMessage(),
+                'data' => []
+            ], 400);
+        }
+    }
+
+    public function update(UpdateAchievementRequest $request, string $id): JsonResponse
+    {
+        $data = $request->validated();
+
+        try {
+
+            $data = $this->achievementService->update($id, $data['title']);
+
+            return response()->json([
+                'status' => false,
+                'message' => "data berhasil diupdate!",
+                'data' => $data
+            ]);
+
+        }catch (Exception $e)
+        {
+            return response()->json([
+                'status' => false,
+                'message' => $e->getMessage(),
+                'data' => []
+            ], 400);
+        }
+    }
+
+    public function destroy(string $id): JsonResponse
+    {
+        try {
+
+            $this->achievementService->delete($id);
+
+            return response()->json([
+                'status' => false,
+                'message' => "data berhasil di hapus!",
+                'data' => []
+            ]);
 
         }catch (Exception $e)
         {

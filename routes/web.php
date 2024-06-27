@@ -30,8 +30,8 @@ Route::middleware('auth')->group(function () {
             Route::get('/', [\App\Http\Controllers\AchievementController::class, "index"])->name("achievement.index");
             Route::get('create', [\App\Http\Controllers\AchievementController::class, "create"])->name("achievement.create");
             Route::post('/', [\App\Http\Controllers\AchievementController::class, "store"])->name("achievement.store");
-//            Route::put('{id}', [\App\Http\Controllers\AchievementController::class, "update"])->name("achievement.update");
-//            Route::delete('{id}', [\App\Http\Controllers\AchievementController::class, "destroy"])->name("achievement.destroy");
+            Route::put('{id}', [\App\Http\Controllers\AchievementController::class, "update"])->name("achievement.update");
+            Route::delete('{id}', [\App\Http\Controllers\AchievementController::class, "destroy"])->name("achievement.destroy");
         });
     });
 

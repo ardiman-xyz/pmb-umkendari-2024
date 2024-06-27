@@ -26,3 +26,10 @@ export type Facility = {
     name: string;
     image_path: string;
 }
+
+export type Achievement = {
+    id: number;
+    title: string;
+    image_path: string;
+}
+

@@ -56,14 +56,14 @@ class FacilityService
 
     public function delete(string $id): bool
     {
+        $facility = $this->facilityRepository->findById($id);
+
+        if (!$facility) {
+            throw new Exception('Fasilitas tidak ditemukan');
+        }
+
         try {
             DB::beginTransaction();
-
-            $facility = $this->facilityRepository->findById($id);
-
-            if (!$facility) {
-                throw new Exception('Fasilitas tidak ditemukan');
-            }
 
             $this->storageService->deleteFile($facility->image_path);
             $facility->delete();

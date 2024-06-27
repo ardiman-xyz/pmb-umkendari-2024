@@ -16,6 +16,11 @@ class AchievementService
         protected StorageServiceHelper $storageService
     ){}
 
+    public function getAll()
+    {
+        return $this->achievementRepository->getAll();
+    }
+
     public function create(StoreAchievement $dto)
     {
         try {
@@ -35,6 +40,40 @@ class AchievementService
         } catch (Exception $e) {
             DB::rollBack();
             throw new Exception('Gagal menyimpan data: ' . $e->getMessage());
+        }
+    }
+
+    public function update(string $id, string $title)
+    {
+        $achievement = $this->achievementRepository->findById((int)$id);
+        if(!$achievement) throw new Exception('Data tidak ditemukan');
+
+        $achievement->title = $title;
+        $achievement->save();
+
+        return $achievement;
+    }
+
+    public function delete(string $id): bool
+    {
+        $achievement = $this->achievementRepository->findById($id);
+
+        if (!$achievement) {
+            throw new Exception('Data tidak ditemukan');
+        }
+
+        try {
+            DB::beginTransaction();
+
+            $this->storageService->deleteFile($achievement->image_path);
+            $achievement->delete();
+
+            DB::commit();
+            return true;
+
+        } catch (Exception $e) {
+            DB::rollBack();
+            throw new Exception('Gagal menghapus data: ' . $e->getMessage());
         }
     }
 }
