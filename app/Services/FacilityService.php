@@ -16,6 +16,11 @@ class FacilityService
         protected StorageServiceHelper $storageService
     ){}
 
+    public function getAll()
+    {
+        return $this->facilityRepository->getAll();
+    }
+
     public function save(FacilityStore $dto)
     {
         try {
@@ -35,6 +40,40 @@ class FacilityService
         } catch (Exception $e) {
             DB::rollBack();
             throw new Exception('Gagal menyimpan slider: ' . $e->getMessage());
+        }
+    }
+
+    public function update(string $id, string $name)
+    {
+        $facility = $this->facilityRepository->findById($id);
+        if(!$facility) throw new Exception("Fasilitas tidak ditemukan");
+
+        $facility->name = $name;
+        $facility->save();
+
+        return $facility;
+    }
+
+    public function delete(string $id): bool
+    {
+        try {
+            DB::beginTransaction();
+
+            $facility = $this->facilityRepository->findById($id);
+
+            if (!$facility) {
+                throw new Exception('Fasilitas tidak ditemukan');
+            }
+
+            $this->storageService->deleteFile($facility->image_path);
+            $facility->delete();
+
+            DB::commit();
+            return true;
+
+        } catch (Exception $e) {
+            DB::rollBack();
+            throw new Exception('Gagal menghapus slider: ' . $e->getMessage());
         }
     }
 }

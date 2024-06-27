@@ -23,6 +23,8 @@ Route::middleware('auth')->group(function () {
             Route::get('/', [\App\Http\Controllers\FacilityController::class, "index"])->name("facility.index");
             Route::get('create', [\App\Http\Controllers\FacilityController::class, "create"])->name("facility.create");
             Route::post('/', [\App\Http\Controllers\FacilityController::class, "store"])->name("facility.store");
+            Route::put('{id}', [\App\Http\Controllers\FacilityController::class, "update"])->name("facility.update");
+            Route::delete('{id}', [\App\Http\Controllers\FacilityController::class, "destroy"])->name("facility.destroy");
         });
     });
 

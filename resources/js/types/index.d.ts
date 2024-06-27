@@ -20,3 +20,9 @@ export type Slider = {
     created_at: string;
     updated_at: string;
 }
+
+export type Facility = {
+    id: number;
+    name: string;
+    image_path: string;
+}

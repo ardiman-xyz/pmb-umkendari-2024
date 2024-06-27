@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Dto\Facility\FacilityStore;
 use App\Http\Requests\StoreFacilityRequest;
+use App\Http\Requests\UpdateFacilityRequest;
 use App\Services\FacilityService;
 use Exception;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class FacilityController extends Controller
@@ -18,7 +18,11 @@ class FacilityController extends Controller
 
     public function index(): \Inertia\Response
     {
-        return Inertia::render("Profiles/Facility/Index");
+        $facilities = $this->facilityService->getAll();
+
+        return Inertia::render("Profiles/Facility/Index", [
+            "facilities" => $facilities
+        ]);
     }
 
     public function create(): \Inertia\Response
@@ -44,6 +48,53 @@ class FacilityController extends Controller
                 'message' => "data berhasil disimpan!",
                 'data' => $data
             ], 201);
+
+        }catch (Exception $e)
+        {
+            return response()->json([
+                'status' => false,
+                'message' => $e->getMessage(),
+                'data' => []
+            ], 400);
+        }
+    }
+
+    public function update(UpdateFacilityRequest $request, string $id): JsonResponse
+    {
+
+        $data = $request->validated();
+
+        try {
+
+            $data = $this->facilityService->update($id, $data['title']);
+
+            return response()->json([
+                'status' => false,
+                'message' => "data berhasil di update!",
+                'data' => $data
+            ]);
+
+        }catch (Exception $e)
+        {
+            return response()->json([
+                'status' => false,
+                'message' => $e->getMessage(),
+                'data' => []
+            ], 400);
+        }
+    }
+
+    public function destroy(string $id)
+    {
+        try {
+
+            $this->facilityService->delete($id);
+
+            return response()->json([
+                'status' => false,
+                'message' => "data berhasil di hapus!",
+                'data' => []
+            ]);
 
         }catch (Exception $e)
         {
