@@ -39,7 +39,7 @@ class FacilityService
 
         } catch (Exception $e) {
             DB::rollBack();
-            throw new Exception('Gagal menyimpan slider: ' . $e->getMessage());
+            throw new Exception('Gagal menyimpan data: ' . $e->getMessage());
         }
     }
 
@@ -73,7 +73,7 @@ class FacilityService
 
         } catch (Exception $e) {
             DB::rollBack();
-            throw new Exception('Gagal menghapus slider: ' . $e->getMessage());
+            throw new Exception('Gagal menghapus data: ' . $e->getMessage());
         }
     }
 }
