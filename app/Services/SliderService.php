@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Dto\Slider\Store;
 use App\Entities\Slider;
+use App\Helpers\StorageServiceHelper;
 use App\Repositories\SliderRepository;
 use Exception;
 use Illuminate\Support\Facades\DB;
@@ -12,7 +13,8 @@ use Illuminate\Support\Facades\Http;
 class SliderService
 {
     public function __construct(
-        protected SliderRepository $sliderRepository
+        protected SliderRepository $sliderRepository,
+        protected StorageServiceHelper $storageService
     ){}
 
     public function getAll()
@@ -22,37 +24,10 @@ class SliderService
 
     public function save(Store $dto)
     {
-        $storageAccessKey = env('STORAGE_ACCESS_KEY');
-        $storageSecretKey = env('STORAGE_SECRET_KEY');
-
         try {
             DB::beginTransaction();
 
-            $response = Http::withHeaders([
-                'X-Access-Key' => $storageAccessKey,
-                'X-Secret-Key' => $storageSecretKey,
-            ])->attach(
-                'file',
-                file_get_contents($dto->file),
-                $dto->file->getClientOriginalName(),
-                ['Content-Type' => $dto->file->getMimeType()]
-            )->post('https://files.umkendari.ac.id/api/media');
-
-            if (!$response->successful()) {
-                throw new Exception('Gagal mengunggah file: ' . $response->body());
-            }
-
-            $responseData = $response->json();
-
-            if (!isset($responseData['data']) || !is_array($responseData['data'])) {
-                throw new Exception('Response tidak valid dari storage service');
-            }
-
-            $fileData = $responseData['data'];
-
-            if (!isset($fileData['path']) || !isset($fileData['name'])) {
-                throw new Exception('Data file tidak lengkap dari storage service');
-            }
+            $fileData = $this->storageService->uploadFile($dto->file);
 
             $data = new Slider();
             $data->imagePath = $fileData['path'];
@@ -72,38 +47,20 @@ class SliderService
 
     public function delete(string $id): bool
     {
-        $storageAccessKey = env('STORAGE_ACCESS_KEY');
-        $storageSecretKey = env('STORAGE_SECRET_KEY');
-
         try {
             DB::beginTransaction();
 
-                $slider = $this->sliderRepository->findById($id);
+            $slider = $this->sliderRepository->findById($id);
 
-                if (!$slider) {
-                    throw new Exception('Slider tidak ditemukan');
-                }
+            if (!$slider) {
+                throw new Exception('Slider tidak ditemukan');
+            }
 
-                $response = Http::withHeaders([
-                    'X-Access-Key' => $storageAccessKey,
-                    'X-Secret-Key' => $storageSecretKey,
-                ])->post('https://files.umkendari.ac.id/api/media/delete', [
-                    'file_path' => $slider->image_path
-                ]);
+            $this->storageService->deleteFile($slider->image_path);
+            $slider->delete();
 
-                if (!$response->successful()) {
-                    throw new Exception('Gagal menghapus file: ' . $response->status() . ' - ' . $response->body());
-                }
-
-                $responseData = $response->json();
-
-                if (!isset($responseData['status']) || $responseData['status'] !== true) {
-                    throw new Exception('Gagal menghapus file dari storage service : ' .  $responseData);
-                }
-                $slider->delete();
-
-                DB::commit();
-                return true;
+            DB::commit();
+            return true;
 
         } catch (Exception $e) {
             DB::rollBack();

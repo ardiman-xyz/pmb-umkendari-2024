@@ -21,6 +21,8 @@ Route::middleware('auth')->group(function () {
     Route::prefix('profile')->group(function () {
         Route::prefix('facilities')->group(function () {
             Route::get('/', [\App\Http\Controllers\FacilityController::class, "index"])->name("facility.index");
+            Route::get('create', [\App\Http\Controllers\FacilityController::class, "create"])->name("facility.create");
+            Route::post('/', [\App\Http\Controllers\FacilityController::class, "store"])->name("facility.store");
         });
     });
 
