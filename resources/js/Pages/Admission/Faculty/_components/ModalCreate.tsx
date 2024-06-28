@@ -54,11 +54,9 @@ export const ModalCreate = ({isOpen, onClose}: ModalCreateProps) => {
             {
                 loading: "Menyimpan data...",
                 success: (res) => {
-                    const {message} = res.data
+                    const {message, data} = res.data
                     setIsLoading(false);
-                    // router.get(route("achievement.index"));
-                    router.reload();
-                    form.reset()
+                    router.get(route("faculty.show", data.id));
                     onClose();
                     return `${message}`
                 },

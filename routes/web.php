@@ -45,6 +45,8 @@ Route::middleware('auth')->group(function () {
             Route::get('/', [\App\Http\Controllers\FacultyController::class, "index"])->name("faculty.index");
             Route::post('/', [\App\Http\Controllers\FacultyController::class, "store"])->name("faculty.store");
             Route::get('{id}', [\App\Http\Controllers\FacultyController::class, "show"])->name("faculty.show");
+            Route::put('{id}/update-profile', [\App\Http\Controllers\FacultyController::class, "updateProfile"])->name("faculty.update-profile");
+            Route::post('{id}/cover', [\App\Http\Controllers\FacultyController::class, "updateCover"])->name("faculty.update-cover");
         });
     });
 

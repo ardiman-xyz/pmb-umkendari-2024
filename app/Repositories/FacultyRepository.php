@@ -9,7 +9,7 @@ class FacultyRepository
 
     public function findAll()
     {
-        return Model::with('departments')->get();
+        return Model::with('departments')->orderBy("created_at", "desc")->get();
     }
 
     public function save(string $name, string $lug)

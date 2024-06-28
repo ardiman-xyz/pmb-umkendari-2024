@@ -39,12 +39,32 @@ export type Faculty = {
     slug: string;
     cover: string | null;
     description: string | null;
+    departments: Department;
     created_at: string;
     updated_at: string;
 }
 
 export type Department = {
     id: number;
+    faculty_id: number;
     name: string;
     slug: string;
+    cover: string | null;
+    description: string | null;
+    created_at: string;
+    updated_at: string;
+    tuition_fees: TuitionFees
+}
+
+
+export type TuitionFees = {
+    id: number;
+    department_id: number;
+    degree_level: string;
+    registration_fee: number;
+    orientation_fee: number;
+    tuition_fee_per_semester: number;
+    bps_semester_1: number;
+    bps_semester_2: number;
+    bps_semester_3: number;
 }
