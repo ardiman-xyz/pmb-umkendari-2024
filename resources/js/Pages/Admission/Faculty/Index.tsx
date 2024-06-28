@@ -4,8 +4,15 @@ import {Heading} from "@/Components/Heading";
 import {Button} from "@/Components/ui/button";
 import {useState} from "react";
 import {ModalCreate} from "@/Pages/Admission/Faculty/_components/ModalCreate";
+import {Faculty} from "@/types";
+import {DataTable} from "@/Pages/Admission/Faculty/_components/DataTable";
+import {columns} from "@/Pages/Admission/Faculty/_components/Column";
 
-const Index = () => {
+interface IndexProps {
+    faculties: Faculty[];
+}
+
+const Index = ({faculties}: IndexProps) => {
 
     const [isModalCreateOpen, setIsModalCreateOpen] = useState<boolean>(false);
 
@@ -28,6 +35,12 @@ const Index = () => {
                 </div>
 
                 <div className="w-full mt-10">
+
+                    <DataTable
+                        columns={columns}
+                        data={faculties}
+                    />
+
                 </div>
                 {
                     isModalCreateOpen && <ModalCreate isOpen={isModalCreateOpen} onClose={handleCloseModal} />

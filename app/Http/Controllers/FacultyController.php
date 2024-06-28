@@ -17,7 +17,11 @@ class FacultyController extends Controller
 
     public function index(): InertiaResponse
     {
-        return Inertia::render("Admission/Faculty/Index");
+        $faculties = $this->facultyService->getAll();
+
+        return Inertia::render("Admission/Faculty/Index", [
+            "faculties" => $faculties
+        ]);
     }
 
     public function store(StoreFacultyRequest $request): JsonResponse
@@ -41,6 +45,21 @@ class FacultyController extends Controller
                 "message" => $exception->getMessage(),
                 "data" => null
             ], 400);
+        }
+    }
+
+    public function show(string $id): InertiaResponse
+    {
+        try {
+            $faculty = $this->facultyService->getByIdRelation($id);
+
+            return Inertia::render("Admission/Faculty/Show", [
+                "faculty" => $faculty
+            ]);
+
+        }catch (Exception $exception)
+        {
+            abort(404);
         }
     }
 }

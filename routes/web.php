@@ -44,6 +44,7 @@ Route::middleware('auth')->group(function () {
         Route::prefix('faculty')->group(function () {
             Route::get('/', [\App\Http\Controllers\FacultyController::class, "index"])->name("faculty.index");
             Route::post('/', [\App\Http\Controllers\FacultyController::class, "store"])->name("faculty.store");
+            Route::get('{id}', [\App\Http\Controllers\FacultyController::class, "show"])->name("faculty.show");
         });
     });
 

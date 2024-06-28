@@ -33,3 +33,18 @@ export type Achievement = {
     image_path: string;
 }
 
+export type Faculty = {
+    id: number;
+    name: string;
+    slug: string;
+    cover: string | null;
+    description: string | null;
+    created_at: string;
+    updated_at: string;
+}
+
+export type Department = {
+    id: number;
+    name: string;
+    slug: string;
+}

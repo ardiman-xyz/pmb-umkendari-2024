@@ -95,7 +95,7 @@ export const ModalCreate = ({isOpen, onClose}: ModalCreateProps) => {
                            </FormItem>
                        )}
                    />
-                   <Button type="submit" disabled={!formState.isDirty || formState.isValidating || isLoading}>
+                   <Button type="submit" variant="primary" disabled={!formState.isDirty || formState.isValidating || isLoading}>
                        Simpan
                    </Button>
                </form>
