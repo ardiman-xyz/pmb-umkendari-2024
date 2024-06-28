@@ -15,7 +15,7 @@ export const SidebarBottom = () => {
         },
         {
             icon: UserCircle,
-            label: "user",
+            label: "User",
             href: "/users",
         },
         {

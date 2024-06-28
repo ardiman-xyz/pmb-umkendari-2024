@@ -39,8 +39,22 @@ const Routes = [
     {
         icon: Megaphone ,
         label: "Admisi",
-        href: "/admission",
+        href: "#",
         requiredRoles: ["Admin"],
+        children: [
+            {
+                icon: Dot,
+                label: "Fakultas",
+                href: "/admission/faculty",
+                requiredRoles: ["Admin"],
+            },
+            {
+                icon: Dot,
+                label: "Prestasi",
+                href: "/admission/roadmap",
+                requiredRoles: ["Admin"],
+            },
+        ]
     },
 ];
 

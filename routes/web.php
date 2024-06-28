@@ -5,6 +5,7 @@ use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -35,6 +36,17 @@ Route::middleware('auth')->group(function () {
         });
     });
 
+    Route::prefix('admission')->group(function () {
+        Route::prefix('department')->group(function () {
+            Route::get('/', [\App\Http\Controllers\DepartmentController::class, "index"])->name("department.index");
+        });
+
+        Route::prefix('faculty')->group(function () {
+            Route::get('/', [\App\Http\Controllers\FacultyController::class, "index"])->name("faculty.index");
+            Route::post('/', [\App\Http\Controllers\FacultyController::class, "store"])->name("faculty.store");
+        });
+    });
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -42,7 +54,4 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get("/register", function() {
-     abort(404);
-});
 require __DIR__.'/guest.php';
