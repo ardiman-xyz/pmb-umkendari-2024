@@ -39,7 +39,7 @@ export type Faculty = {
     slug: string;
     cover: string | null;
     description: string | null;
-    departments: Department;
+    departments: Department[];
     created_at: string;
     updated_at: string;
 }
@@ -51,6 +51,7 @@ export type Department = {
     slug: string;
     cover: string | null;
     description: string | null;
+    accreditation: string;
     created_at: string;
     updated_at: string;
     tuition_fees: TuitionFees
@@ -67,4 +68,6 @@ export type TuitionFees = {
     bps_semester_1: number;
     bps_semester_2: number;
     bps_semester_3: number;
+    seminar_fee: number;
+    matriculation_fee: number;
 }

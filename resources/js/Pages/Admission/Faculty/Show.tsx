@@ -42,7 +42,6 @@ const ShowPage = ({faculty}: ShowPageProps) => {
                                 }
                                 id={faculty.id}
                             />
-
                             <DescriptionForm
                                 initialData={
                                     {
@@ -59,7 +58,7 @@ const ShowPage = ({faculty}: ShowPageProps) => {
                         </div>
                     </div>
                     <Separator className="my-10"/>
-                    <Departments faculty={faculty}/>
+                    <Departments faculty={faculty} departments={faculty.departments}/>
                 </div>
             </div>
         </Authenticated>

@@ -33,6 +33,6 @@ class FacultyRepository
 
     public function getByIdWithRelations(int $id)
     {
-        return Model::with('departments')->findOrFail($id);
+        return Model::with('departments.tuitionFees')->findOrFail($id);
     }
 }

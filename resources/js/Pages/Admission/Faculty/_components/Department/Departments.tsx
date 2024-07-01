@@ -5,13 +5,14 @@ import {columns} from "./Column";
 import {Button} from "@/Components/ui/button";
 import {useState} from "react";
 import {ModalCreate} from "@/Pages/Admission/Faculty/_components/Department/ModalCreate";
-import {Faculty} from "@/types";
+import {Department, Faculty} from "@/types";
 
 interface DepartmentProps {
-    faculty : Faculty
+    faculty : Faculty;
+    departments: Department[]
 }
 
-export const Departments = ({faculty}: DepartmentProps) => {
+export const Departments = ({faculty, departments}: DepartmentProps) => {
 
     const [modalCreate, setModalCreate] = useState<boolean>(false);
 
@@ -29,7 +30,7 @@ export const Departments = ({faculty}: DepartmentProps) => {
                 <Button variant="primary" onClick={() => setModalCreate(true)}>Tambah Prodi</Button>
             </div>
             <div className="mt-6">
-                <DataTable columns={columns} data={[]}/>
+                <DataTable columns={columns} data={departments}/>
             </div>
 
           <ModalCreate isOpen={modalCreate} handleClose={handleCloseModalCreate} facultyId={faculty.id} />
