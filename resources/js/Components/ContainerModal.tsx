@@ -15,12 +15,12 @@ interface ModalProps {
 const ContainerModal = ({ isOpen, onClose, children, title = "Modal"}: ModalProps) => {
     return (
         <Dialog open={isOpen} onOpenChange={onClose}>
-
-            <DialogContent>
+            <DialogContent >
                 <DialogTitle>
                     {title}
                 </DialogTitle>
-                {children}</DialogContent>
+                {children}
+            </DialogContent>
         </Dialog>
     );
 };

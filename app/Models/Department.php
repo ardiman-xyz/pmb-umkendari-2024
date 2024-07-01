@@ -10,6 +10,8 @@ class Department extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function faculty(): BelongsTo
     {
         return $this->belongsTo(Faculty::class, 'faculty_id');

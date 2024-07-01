@@ -1,6 +1,6 @@
 import React, { useRef, useState, ChangeEvent, useEffect } from "react";
 import FormError from "@/Components/FormError";
-import {cn} from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 interface FormUploadProps {
     onFileChange: (file: File | undefined) => void;
@@ -8,16 +8,15 @@ interface FormUploadProps {
     maxFileSize?: number;
     isLoading?: boolean;
     error?: string;
-    height?: number;
 }
 
 export const FormUpload: React.FC<FormUploadProps> = ({
-      onFileChange,
-      acceptedFileTypes = "image/*",
-      maxFileSize = 2 * 1024 * 1024, // 2MB
-      isLoading = false,
-      error, height
-  }) => {
+    onFileChange,
+    acceptedFileTypes = "image/*",
+    maxFileSize = 2 * 1024 * 1024, // 2MB
+    isLoading = false,
+    error,
+}) => {
     const fileInputRef = useRef<HTMLInputElement>(null);
     const [file, setFile] = useState<File | undefined>(undefined);
     const [preview, setPreview] = useState<string | undefined>(undefined);
@@ -37,7 +36,7 @@ export const FormUpload: React.FC<FormUploadProps> = ({
                 return;
             }
             setFile(selectedFile);
-            if (selectedFile.type.startsWith('image/')) {
+            if (selectedFile.type.startsWith("image/")) {
                 setPreview(URL.createObjectURL(selectedFile));
             } else {
                 setPreview(undefined);
@@ -65,7 +64,13 @@ export const FormUpload: React.FC<FormUploadProps> = ({
                 ) : (
                     <p>{file.name}</p>
                 )}
-                {preview && <img src={preview} alt="Preview" className="mt-4 mx-auto max-w-full h-auto" />}
+                {preview && (
+                    <img
+                        src={preview}
+                        alt="Preview"
+                        className="mt-4 mx-auto max-w-full h-auto"
+                    />
+                )}
             </div>
             <input
                 type="file"

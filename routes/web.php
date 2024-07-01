@@ -39,6 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::prefix('admission')->group(function () {
         Route::prefix('department')->group(function () {
             Route::get('/', [\App\Http\Controllers\DepartmentController::class, "index"])->name("department.index");
+            Route::post('/', [\App\Http\Controllers\DepartmentController::class, "store"])->name("department.store");
         });
 
         Route::prefix('faculty')->group(function () {

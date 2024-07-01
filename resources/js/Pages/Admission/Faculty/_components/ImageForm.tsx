@@ -74,7 +74,7 @@ export const ImageForm = ({ initialData, id }: TitleFormProps) => {
                    <DescUpload />
                </div>
                 <Button onClick={toggleEdit} variant={"ghost"}>
-                    {isEditing && <>Cancel </>}
+                    {isEditing && <>Batal </>}
 
                     {
                         !isEditing && !initialData.cover && (
