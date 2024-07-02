@@ -9,8 +9,10 @@ import {
     DropdownMenuTrigger
 } from "@/Components/ui/dropdown-menu";
 import {Button} from "@/Components/ui/button";
-import {ClipboardEdit, Link2, MoreHorizontal, Trash2} from "lucide-react";
+import {ClipboardEdit, MoreHorizontal, Trash2} from "lucide-react";
 import {useState} from "react";
+import {ModalEdit} from "./ModalEdit";
+import DeleteConfirm from "@/Pages/Admission/Faculty/_components/Department/ModalDelete";
 
 
 export const columns: ColumnDef<Department>[] = [
@@ -50,7 +52,7 @@ export const columns: ColumnDef<Department>[] = [
         }
     },
     {
-        id: "jenjang",
+        id: "registrasi",
         header: "Registrasi",
         cell: ({row}) => {
             return (
@@ -61,7 +63,7 @@ export const columns: ColumnDef<Department>[] = [
         }
     },
     {
-        id: "jenjang",
+        id: "oritentasi",
         header: "Orientasi",
         cell: ({row}) => {
             return (
@@ -72,7 +74,7 @@ export const columns: ColumnDef<Department>[] = [
         }
     },
     {
-        id: "jenjang",
+        id: "bpp",
         header: "BPP (Setiap semester)",
         cell: ({row}) => {
             return (
@@ -126,11 +128,8 @@ export const columns: ColumnDef<Department>[] = [
 
 const ActionMenu = ({ data }: { data: Department }) => {
 
-    const [isModalInviteOpen, setIsModalInviteOpen] = useState<boolean>(false);
     const [isModalEditOpen, setIsModalEditOpen] = useState<boolean>(false)
     const [isModalDeleteOpen, setIsModalDeleteOpen] = useState<boolean>(false)
-
-    const toggleModalInvite = () => setIsModalInviteOpen(!isModalInviteOpen);
 
     return (
         <div>
@@ -160,16 +159,19 @@ const ActionMenu = ({ data }: { data: Department }) => {
                 </DropdownMenuContent>
             </DropdownMenu>
 
-            {/*{*/}
-            {/*    isModalEditOpen && (*/}
-            {/*        <EditModal user={data} onClose={() => setIsModalEditOpen(false)}  />*/}
-            {/*    )*/}
-            {/*}*/}
-            {/*{*/}
-            {/*    isModalDeleteOpen && (*/}
-            {/*        <DeleteConfirm user={data} onClose={() => setIsModalDeleteOpen(false)}  />*/}
-            {/*    )*/}
-            {/*}*/}
+            {
+                isModalEditOpen && (
+                    <ModalEdit
+                        department={data}
+                        onClose={() => setIsModalEditOpen(false)}
+                    />
+                )
+            }
+            {
+                isModalDeleteOpen && (
+                    <DeleteConfirm department={data} onClose={() => setIsModalDeleteOpen(false)}  />
+                )
+            }
 
         </div>
     );

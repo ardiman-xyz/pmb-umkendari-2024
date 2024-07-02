@@ -22,4 +22,9 @@ class TuitionFeeRepository
             "matriculation_fee" => $data->matriculationFee,
         ]);
     }
+
+    public function findByDepartmentId(int $departmentId): ?Model
+    {
+        return Model::where("department_id", $departmentId)->first();
+    }
 }

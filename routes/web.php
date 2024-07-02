@@ -40,6 +40,8 @@ Route::middleware('auth')->group(function () {
         Route::prefix('department')->group(function () {
             Route::get('/', [\App\Http\Controllers\DepartmentController::class, "index"])->name("department.index");
             Route::post('/', [\App\Http\Controllers\DepartmentController::class, "store"])->name("department.store");
+            Route::put('{id}', [\App\Http\Controllers\DepartmentController::class, "update"])->name("department.update");
+            Route::delete('{id}', [\App\Http\Controllers\DepartmentController::class, "destroy"])->name("department.destroy");
         });
 
         Route::prefix('faculty')->group(function () {

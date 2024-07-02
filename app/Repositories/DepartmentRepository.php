@@ -18,4 +18,9 @@ class DepartmentRepository
             "description"   => $data->description,
         ]);
     }
+
+    public function findById(int $id): ?Model
+    {
+        return Model::find($id);
+    }
 }
