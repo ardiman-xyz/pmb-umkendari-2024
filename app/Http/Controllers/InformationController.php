@@ -41,8 +41,8 @@ class InformationController extends Controller
         $dto = new InformationDTO();
         $dto->id = $id;
         $dto->roadmap = $roadmap;
-        $dto->admission_brochure = $admission_brochure;
-        $dto->entry_paths_requirements = $entry_paths_requirements;
+        $dto->admissionBrochure = $admission_brochure;
+        $dto->entryPathsRequirements = $entry_paths_requirements;
 
         try {
 

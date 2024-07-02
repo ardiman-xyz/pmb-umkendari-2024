@@ -2,7 +2,7 @@ import {HeadingInfo} from "@/Components/HeadingInfo";
 import {FormUpload} from "@/Components/FormUpload";
 import React, {useState} from "react";
 import {Button} from "@/Components/ui/button";
-import {ImageOffIcon, Pencil, PlusCircle, UploadIcon} from "lucide-react";
+import {ArchiveX, ImageOffIcon, Pencil, PlusCircle, UploadIcon} from "lucide-react";
 import {toast} from "sonner";
 import axios from "axios";
 import {router} from "@inertiajs/react";
@@ -13,10 +13,10 @@ interface RoadmapProps {
     defaultData: Information | null
 }
 
-export const Roadmap = ({defaultData}: RoadmapProps) => {
+export const AdmissionBrochure = ({defaultData}: RoadmapProps) => {
 
     const [isLoading, setIsLoading] = useState<boolean>(false);
-    const [image, setImage] = useState<File|undefined>(undefined);
+    const [file, setFile] = useState<File|undefined>(undefined);
     const [isEditing, setIsEditing] = useState<boolean>(false)
 
     const [errorMessage, setErrorMessage] = useState<undefined | string>(
@@ -24,18 +24,17 @@ export const Roadmap = ({defaultData}: RoadmapProps) => {
     );
 
     const handleFileChange = (file: File | undefined) => {
-        setImage(file)
+        setFile(file)
     }
 
     const toggleEdit = () => setIsEditing((current) => !current);
 
     const onUpload = () => {
-        if(!image) return;
+        if(!file) return;
 
         const formData = new FormData();
-        setIsLoading(true)
 
-        formData.append("roadmap", image);
+        formData.append("admission_brochure", file);
 
         if (defaultData !== null) {
             formData.append("id", defaultData.id.toString());
@@ -68,41 +67,30 @@ export const Roadmap = ({defaultData}: RoadmapProps) => {
     return (
         <div>
           <div className="flex justify-between items-center">
-              <HeadingInfo title={"Alur Pendaftaran"}>
+              <HeadingInfo title={"Brosur"}>
                   <h2>Keterangan :</h2>
                   <ul className="text-sm mt-2 text-muted-foreground list-decimal pl-6">
                       <li>
-                          Ukuran gambar <b>: 1080x1185</b> piksel
+                          Ukuran file <b>: 4MB</b> piksel
                       </li>
-                      <li>Format file yang diterima: Webp, SVG, PNG, atau JPG</li>
-                      <li>
-                          Format <b>Webp</b> sangat direkomendasikan untuk
-                          performa optimal dan memiliki kualitas yang baik
-                          untuk website
-                      </li>
-                      <li>
-                          Ukuran file maksimal: <b>2 MB</b>
-                      </li>
-                      <li>
-                          Pastikan gambar memiliki resolusi tinggi dan jernih
-                      </li>
+                      <li>Format file yang diterima: pdf</li>
                   </ul>
               </HeadingInfo>
               <Button variant="ghost" onClick={toggleEdit}>
                   {isEditing && <>Batal </>}
 
                   {
-                      !isEditing && !defaultData?.roadmap && (
+                      !isEditing && !defaultData?.admission_brochure && (
                           <>
-                              <PlusCircle className="w-4 h-4 mr-2"/> Upload Gambar
+                              <PlusCircle className="w-4 h-4 mr-2"/> Upload File
                           </>
                       )
                   }
 
                   {
-                      !isEditing && defaultData?.roadmap && (
+                      !isEditing && defaultData?.admission_brochure && (
                           <>
-                              <Pencil className="h-4 w-4 mr-2"/> Ubah Gambar
+                              <Pencil className="h-4 w-4 mr-2"/> Ubah File
                           </>
                       )
                   }
@@ -112,11 +100,11 @@ export const Roadmap = ({defaultData}: RoadmapProps) => {
                 {
                     isEditing && (
                         <>
-                            <FormUpload onFileChange={handleFileChange}/>
+                            <FormUpload acceptedFileTypes={"application/pdf"} onFileChange={handleFileChange}/>
                             <div className="mt-2">
                                 <FormError message={errorMessage}/>
                             </div>
-                            <Button variant="primary" className="mt-4 flex items-center" disabled={!image || isLoading} onClick={onUpload}>
+                            <Button variant="primary" className="mt-4 flex items-center" disabled={!file || isLoading} onClick={onUpload}>
                                 <UploadIcon className="h-4 w-4 mr-2"/>
                                 Upload
                             </Button>
@@ -127,20 +115,19 @@ export const Roadmap = ({defaultData}: RoadmapProps) => {
                 {
                     !isEditing && (
                         <>
-                                {!defaultData?.roadmap ? (
-                                    <div className="flex items-center h-80 justify-center bg-gray-200 border p-1 rounded-md overflow-hidden">
-                                        <ImageOffIcon className="text-slate-600"/>
+                                {!defaultData?.admission_brochure ? (
+                                    <div className="flex flex-col gap-y-1 items-center h-60 justify-center bg-gray-200 border p-1 rounded-md overflow-hidden">
+                                        <ArchiveX className="text-slate-500"/>
+                                        <p className="text-muted-foreground text-sm">Tidak ada file</p>
                                     </div>
 
                                 ) : (
-                                    <div
-                                        className="flex items-center justify-center border p-1 rounded-md overflow-hidden">
-                                        <img
-                                            src={defaultData?.roadmap}
-                                            alt="gambar"
-                                            className="w-full h-full object-cover object-center"
-                                        />
-                                    </div>
+                                    <a href={defaultData.admission_brochure} target="_blank"
+                                       rel="noopener noreferrer"
+                                        className="text-blue-1 hover:text-blue-2 hover:underline"
+                                    >
+                                        Buka PDF
+                                    </a>
                                 )}
 
                         </>
