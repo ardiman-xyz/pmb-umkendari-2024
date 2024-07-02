@@ -71,3 +71,10 @@ export type TuitionFees = {
     seminar_fee: number;
     matriculation_fee: number;
 }
+
+export type Information = {
+    id: number;
+    roadmap: string | null;
+    admission_brochure: string | null;
+    entry_paths_requirements: string | null;
+}

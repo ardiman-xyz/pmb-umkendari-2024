@@ -50,8 +50,8 @@ const Routes = [
             },
             {
                 icon: Dot,
-                label: "Prestasi",
-                href: "/admission/roadmap",
+                label: "Informasi",
+                href: "/admission/information",
                 requiredRoles: ["Admin"],
             },
         ]

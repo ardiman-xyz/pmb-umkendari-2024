@@ -51,6 +51,11 @@ Route::middleware('auth')->group(function () {
             Route::put('{id}/update-profile', [\App\Http\Controllers\FacultyController::class, "updateProfile"])->name("faculty.update-profile");
             Route::post('{id}/cover', [\App\Http\Controllers\FacultyController::class, "updateCover"])->name("faculty.update-cover");
         });
+
+        Route::prefix('information')->group(function () {
+            Route::get('/', [\App\Http\Controllers\InformationController::class, "index"])->name("info.index");
+            Route::post('/', [\App\Http\Controllers\InformationController::class, "store"])->name("info.roadmap.store");
+        });
     });
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

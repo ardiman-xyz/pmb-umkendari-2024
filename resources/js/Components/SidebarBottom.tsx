@@ -8,12 +8,6 @@ export const SidebarBottom = () => {
 
     const Routes = [
         {
-            icon: InfoIcon,
-            label: "Informasi",
-            href: "/information",
-            requiredRoles: ["Admin"],
-        },
-        {
             icon: UserCircle,
             label: "User",
             href: "/users",
