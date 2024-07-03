@@ -18,5 +18,6 @@ class DepartmentDto
     public string $bps_semester_3;
     public ?string $seminar_fee;
     public ?string $matriculation_fee;
+    public ?string $capacity;
 
 }

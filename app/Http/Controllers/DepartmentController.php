@@ -39,6 +39,7 @@ class DepartmentController extends Controller
         $dto->bps_semester_3 = $data['bps_semester_3'];
         $dto->seminar_fee = $data['seminar_fee'] ?? 0;
         $dto->matriculation_fee = $data['matriculation_fee'] ?? 0;
+        $dto->capacity = $data['capacity'] ?? 0;
 
 
         try {
@@ -79,7 +80,7 @@ class DepartmentController extends Controller
         $dto->bps_semester_3 = $data['bps_semester_3'];
         $dto->seminar_fee = $data['seminar_fee'] ?? 0;
         $dto->matriculation_fee = $data['matriculation_fee'] ?? 0;
-
+        $dto->capacity = $data['capacity'];
 
         try {
 

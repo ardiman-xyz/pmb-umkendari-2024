@@ -48,6 +48,7 @@ class DepartmentService
             $tuitionFee->bpsSemester3 = $dto->bps_semester_3;
             $tuitionFee->seminarFee = $dto->seminar_fee;
             $tuitionFee->matriculationFee = $dto->matriculation_fee;
+            $tuitionFee->capacity = (int)$dto->capacity;
 
             $tuitionFee = $this->tuitionFeeRepository->save($tuitionFee);
 
@@ -94,6 +95,7 @@ class DepartmentService
             $tuitionFee->bps_semester_3 = $dto->bps_semester_3;
             $tuitionFee->seminar_fee = $dto->seminar_fee;
             $tuitionFee->matriculation_fee = $dto->matriculation_fee;
+            $tuitionFee->capacity = $dto->capacity;
 
             $tuitionFee->save();
         }

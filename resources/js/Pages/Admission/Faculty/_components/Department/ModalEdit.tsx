@@ -55,6 +55,7 @@ export const ModalEdit = ({onClose, department}: ModalCreateProps) => {
             degree_level: department.tuition_fees.degree_level,
             seminar_fee: department.tuition_fees.seminar_fee.toString(),
             matriculation_fee: department.tuition_fees.matriculation_fee.toString(),
+            capacity: department.tuition_fees.capacity.toString(),
         },
     });
     const {  watch } = form;
@@ -146,6 +147,22 @@ export const ModalEdit = ({onClose, department}: ModalCreateProps) => {
                                                 <SelectItem value="pascasarjana">Pascasarjana</SelectItem>
                                             </SelectContent>
                                         </Select>
+                                        <FormMessage/>
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name="capacity"
+                                render={({field}) => (
+                                    <FormItem>
+                                        <FormLabel>Daya Tampung</FormLabel>
+                                        <FormControl>
+                                            <Input {...field} />
+                                        </FormControl>
+                                        <FormDescription>
+                                            Contoh: 1, 10
+                                        </FormDescription>
                                         <FormMessage/>
                                     </FormItem>
                                 )}

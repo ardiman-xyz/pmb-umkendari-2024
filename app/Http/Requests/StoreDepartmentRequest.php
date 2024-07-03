@@ -28,6 +28,7 @@ class StoreDepartmentRequest extends FormRequest
             'bps_semester_3' => 'required|string|max:50',
             'seminar_fee' => 'nullable|string|max:50',
             'matriculation_fee' => 'nullable|string|max:50',
+            'capacity' => 'nullable|string|max:50',
         ];
     }
 

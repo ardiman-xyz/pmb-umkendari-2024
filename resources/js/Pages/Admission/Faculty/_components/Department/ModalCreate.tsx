@@ -55,6 +55,7 @@ export const ModalCreate = ({isOpen, handleClose, facultyId}: ModalCreateProps) 
             degree_level: "",
             seminar_fee: "",
             matriculation_fee: "",
+            capacity: "",
         },
     });
     const {  watch } = form;
@@ -152,6 +153,22 @@ export const ModalCreate = ({isOpen, handleClose, facultyId}: ModalCreateProps) 
                                 )}
                             />
 
+                            <FormField
+                                control={form.control}
+                                name="capacity"
+                                render={({field}) => (
+                                    <FormItem>
+                                        <FormLabel>Daya Tampung</FormLabel>
+                                        <FormControl>
+                                            <Input {...field} />
+                                        </FormControl>
+                                        <FormDescription>
+                                            Contoh: 1, 10
+                                        </FormDescription>
+                                        <FormMessage/>
+                                    </FormItem>
+                                )}
+                            />
                             <Separator className="my-10"/>
                             <p className="font-semibold">Biaya Pendidikan</p>
                             <div className="grid lg:grid-cols-2 grid-cols-1 gap-3">

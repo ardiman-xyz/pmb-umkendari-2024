@@ -50,6 +50,7 @@ Route::middleware('auth')->group(function () {
             Route::get('{id}', [\App\Http\Controllers\FacultyController::class, "show"])->name("faculty.show");
             Route::put('{id}/update-profile', [\App\Http\Controllers\FacultyController::class, "updateProfile"])->name("faculty.update-profile");
             Route::post('{id}/cover', [\App\Http\Controllers\FacultyController::class, "updateCover"])->name("faculty.update-cover");
+            Route::delete('{id}', [\App\Http\Controllers\FacultyController::class, "destroy"])->name("faculty.destroy");
         });
 
         Route::prefix('information')->group(function () {

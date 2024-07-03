@@ -73,4 +73,32 @@ class FacultyService
             throw new Exception('Gagal menyimpan data: ' . $e->getMessage());
         }
     }
+
+    public function deleteByIdRelation(string $id): bool
+    {
+        $faculty = $this->facultyRepository->findById((int)$id);
+        if (!$faculty) throw new Exception("Fakultas tidak ditemukan");
+
+        DB::beginTransaction();
+        try {
+            foreach ($faculty->departments as $department) {
+                $department->tuitionFees()->delete();
+            }
+
+            $faculty->departments()->delete();
+
+            if ($faculty->cover) {
+                $this->storageService->deleteFile($faculty->cover);
+            }
+
+            $faculty->delete();
+
+            DB::commit();
+            return true;
+
+        } catch (Exception $exception) {
+            DB::rollBack();
+            throw new Exception($exception->getMessage());
+        }
+    }
 }

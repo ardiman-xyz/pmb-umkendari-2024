@@ -117,4 +117,26 @@ class FacultyController extends Controller
             ], 400);
         }
     }
+
+    public function destroy(string $id): JsonResponse
+    {
+        try {
+
+            $data = $this->facultyService->deleteByIdRelation($id);
+
+            return response()->json([
+                "status" => true,
+                "message" => "Data berhasil disimpan",
+                "data" => $data
+            ]);
+
+        }catch (Exception $exception)
+        {
+            return response()->json([
+                "status" => false,
+                "message" => $exception->getMessage(),
+                "data" => null
+            ], 400);
+        }
+    }
 }

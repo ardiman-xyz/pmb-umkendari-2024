@@ -62,6 +62,7 @@ export type TuitionFees = {
     id: number;
     department_id: number;
     degree_level: string;
+    capacity: number;
     registration_fee: number;
     orientation_fee: number;
     tuition_fee_per_semester: number;

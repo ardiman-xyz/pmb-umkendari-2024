@@ -20,6 +20,7 @@ class TuitionFeeRepository
             "bps_semester_3" => $data->bpsSemester3,
             "seminar_fee" => $data->seminarFee,
             "matriculation_fee" => $data->matriculationFee,
+            "capacity" => $data->capacity,
         ]);
     }
 

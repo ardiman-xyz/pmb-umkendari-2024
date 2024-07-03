@@ -52,6 +52,17 @@ export const columns: ColumnDef<Department>[] = [
         }
     },
     {
+        id: "capacity",
+        header: "Kapasitas",
+        cell: ({row}) => {
+            return (
+                <div>
+                    <p className="capitalize text-xs text-center">{row.original.tuition_fees.capacity}</p>
+                </div>
+            )
+        }
+    },
+    {
         id: "registrasi",
         header: "Registrasi",
         cell: ({row}) => {

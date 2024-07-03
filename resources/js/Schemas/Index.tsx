@@ -33,4 +33,5 @@ export const DepartmentFormSchema = z.object({
     }).max(50),
     seminar_fee: z.string().optional(),
     matriculation_fee: z.string().optional(),
+    capacity: z.string().optional(),
 })
