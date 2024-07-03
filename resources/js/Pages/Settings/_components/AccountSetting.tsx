@@ -1,5 +1,6 @@
 import { Separator } from "@/Components/ui/separator";
 import {PersonalInfo} from "@/Pages/Settings/_components/PersonalInfo";
+import {PasswordForm} from "@/Pages/Settings/_components/PasswordForm";
 
 export const AccountSetting = () => {
     return (
@@ -8,7 +9,7 @@ export const AccountSetting = () => {
                 <div>
                     <PersonalInfo />
                     <Separator className="my-10" />
-                    {/*<AccountForm />*/}
+                    <PasswordForm />
                 </div>
                 <div>
                     {/*<AvatarForm />*/}
