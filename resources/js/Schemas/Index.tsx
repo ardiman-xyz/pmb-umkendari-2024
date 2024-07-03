@@ -34,4 +34,12 @@ export const DepartmentFormSchema = z.object({
     seminar_fee: z.string().optional(),
     matriculation_fee: z.string().optional(),
     capacity: z.string().optional(),
-})
+});
+
+
+export const PersonalInfoSchema = z
+    .object({
+        email: z.string().email({
+            message: "Email tidak valid"
+        }).min(1, "Username lama harus diisi"),
+    })
