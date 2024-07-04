@@ -42,4 +42,9 @@ class HomeService
     {
         return $this->facultyRepository->getDepartmentByGraduate();
     }
+
+    public function getInformation()
+    {
+        return $this->informationRepository->findData();
+    }
 }

@@ -5,16 +5,26 @@ import Guest from "@/Layouts/GuestLayout";
 import FilePdf from "../../../../../public/file/jenis_persyaratan_beasiswa.pdf";
 import { ChevronRight, Download } from "lucide-react";
 import { Button } from "@/Components/ui/button";
+import {Information} from "@/types";
+import * as pdfjsLib from 'pdfjs-dist';
+import 'pdfjs-dist/web/pdf_viewer.css';
 
-const Index = () => {
+interface IndexProps {
+    information: Information
+}
+
+const Index = ({information}: IndexProps) => {
+
+    console.info(information)
+
     const handleRedirect = (programs: string) => {
         return router.get(route(programs));
     };
 
     const handleDownload = () => {
         const link = document.createElement("a");
-        link.href = "/file/jenis_persyaratan_beasiswa.pdf";
-        link.download = "jenis_persyaratan_beasiswa_2024.pdf";
+        link.href = information.entry_paths_requirements ?? "/file/jenis_persyaratan_beasiswa.pdf";
+        link.download = information.entry_paths_requirements ?? "jenis_persyaratan_beasiswa_2024.pdf";
         link.click();
     };
 
@@ -39,21 +49,24 @@ const Index = () => {
             <div className="container mx-auto mt-10">
                 <div className="w-full flex md:flex-row flex-col mt-10 md:gap-x-14 gap-x-0">
                     <div className="md:w-4/5 w-full pb-10">
-                        <iframe
-                            src={FilePdf}
-                            width={"100%"}
-                            height={800}
-                        ></iframe>
+                        {/*<iframe*/}
+                        {/*    src={`${information.entry_paths_requirements ?? FilePdf}`}*/}
+                        {/*    width={"100%"}*/}
+                        {/*    height={800}*/}
+                        {/*></iframe>*/}
+
+                        <p>Silahkan download file JALUR MASUK DAN PERSYARATAN di <a target="_blank" href={information.entry_paths_requirements ?? "#"} className="font-bold text-[#991B1B] hover:underline">sini</a></p>
 
                         <hr />
                         <div className="mt-4">
-                            <Button
-                                variant="guestButtonDefault"
-                                onClick={handleDownload}
+                            <a
+                                target="_blank"
+                                className="flex items-center gap-x-2 px-6 py-4 bg-[#991B1B] w-max text-white cursor-pointer"
+                                href={information.entry_paths_requirements ?? "#"}
                             >
                                 Unduh Jalur Masuk
                                 <Download className="h-4 w-4 ml-3" />
-                            </Button>
+                            </a>
                         </div>
                     </div>
                     <div className="md:w-1/5 w-full pb-10 md:mt-0">
@@ -114,3 +127,4 @@ const Index = () => {
 };
 
 export default Index;
+
