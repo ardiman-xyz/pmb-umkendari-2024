@@ -15,8 +15,6 @@ interface IndexProps {
 
 const Index = ({information}: IndexProps) => {
 
-    console.info(information)
-
     const handleRedirect = (programs: string) => {
         return router.get(route(programs));
     };

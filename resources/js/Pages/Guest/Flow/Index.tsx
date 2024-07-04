@@ -5,8 +5,15 @@ import Guest from "@/Layouts/GuestLayout";
 import FilePdf from "../../../../../public/file/jenis_persyaratan_beasiswa.pdf";
 import { ChevronRight, Download } from "lucide-react";
 import { Button } from "@/Components/ui/button";
+import {Information} from "@/types";
 
-const Index = () => {
+interface IndexProps {
+    information: Information
+}
+
+
+const Index = ({information}: IndexProps) => {
+
     const handleRedirect = (programs: string) => {
         return router.get(route(programs));
     };
@@ -33,7 +40,7 @@ const Index = () => {
                 <div className="w-full flex md:flex-row flex-col mt-10 md:gap-x-14 gap-x-0">
                     <div className="md:w-4/5 w-full pb-10">
                         <img
-                            src="/svg/alur_pendaftaran_2024.svg"
+                            src={information.roadmap ?? "/svg/alur_pendaftaran_2024.svg"}
                             alt="alur pendaftaran"
                         />
                     </div>
