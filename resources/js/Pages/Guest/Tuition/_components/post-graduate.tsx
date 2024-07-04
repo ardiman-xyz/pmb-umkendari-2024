@@ -10,8 +10,13 @@ import currency from "@/Helpers/currency.js";
 import { Button } from "@/Components/ui/button";
 import { Download } from "lucide-react";
 
-const PostGraduate = () => {
-    const { faculties } = postgraduate;
+import {Undergraduate as UndergraduateType} from "@/types";
+
+interface UndergraduateProps {
+    data: UndergraduateType[]
+}
+
+const PostGraduate = ({data}: UndergraduateProps) => {
 
     const handleDownload = () => {
         const link = document.createElement("a");
@@ -27,18 +32,19 @@ const PostGraduate = () => {
             </h2>
 
             <div className="w-full mx-auto  overflow-x-auto">
-                {faculties.map((faculty, index) => (
-                    <Accordion
-                        type="single"
-                        collapsible
-                        key={index}
-                        className="border-x-[1px] border-y-[0.5px] border-zinc-300 px-4"
-                    >
-                        <AccordionItem value={`item-${index + 1}`}>
-                            <AccordionTrigger>{faculty.name}</AccordionTrigger>
-                            <AccordionContent className="overflow-x-auto">
-                                <table className="w-full overflow-x-scroll  text-sm leading-normal ">
-                                    <thead>
+                {data.map((faculty, index) => (
+                    faculty.pascasarjana_departments && Object.keys(faculty.pascasarjana_departments).length > 0  ? (
+                        <Accordion
+                            type="single"
+                            collapsible
+                            key={index}
+                            className="border-x-[1px] border-y-[0.5px] border-zinc-300 px-4"
+                        >
+                            <AccordionItem value={`item-${index + 1}`}>
+                                <AccordionTrigger className="capitalize">Fakultas {faculty.name}</AccordionTrigger>
+                                <AccordionContent className="overflow-x-auto">
+                                    <table className="w-full overflow-x-scroll  text-sm leading-normal ">
+                                        <thead>
                                         <tr>
                                             <th
                                                 className="px-4 py-2 text-left border border-zinc-300"
@@ -56,7 +62,7 @@ const PostGraduate = () => {
                                                 className="px-4 py-2 border border-zinc-300 text-center"
                                                 rowSpan={2}
                                             >
-                                                Biaya Almamater
+                                                Orientasi
                                             </th>
                                             <th
                                                 className="px-4 py-2 border border-zinc-300 text-center"
@@ -70,18 +76,6 @@ const PostGraduate = () => {
                                             >
                                                 BPS (Diangsur dalam 3 semester)
                                             </th>
-                                            <th
-                                                rowSpan={2}
-                                                className="px-4 py-2 border border-zinc-300 text-center"
-                                            >
-                                                Biaya Matrikulasi
-                                            </th>
-                                            <th
-                                                rowSpan={2}
-                                                className="px-4 py-2 border border-zinc-300 text-center"
-                                            >
-                                                Biaya Ujian <span>*</span>
-                                            </th>
                                         </tr>
                                         <tr>
                                             <th className="px-4 py-2 border border-zinc-300 text-center">
@@ -94,75 +88,60 @@ const PostGraduate = () => {
                                                 Smt. 3
                                             </th>
                                         </tr>
-                                    </thead>
-                                    <tbody>
-                                        {faculty.programs.map(
+                                        </thead>
+                                        <tbody>
+                                        {faculty.pascasarjana_departments.map(
                                             (program, key) => (
                                                 <tr key={key}>
-                                                    <td className="px-4 py-2 border border-zinc-300 text-xs">
+                                                    <td className="px-4 py-2 border border-zinc-300 text-sm">
                                                         {program.name}
                                                     </td>
-                                                    <td className="px-4 py-2 border border-zinc-300 text-xs">
+                                                    <td className="px-4 py-2 border border-zinc-300 text-sm w-[140px]">
                                                         {currency(
-                                                            program.registration_fee
+                                                            program.tuition_fees.registration_fee
                                                         )}
                                                     </td>
-                                                    <td className="px-4 py-2 border border-zinc-300 text-xs">
+                                                    <td className="px-4 py-2 border border-zinc-300 text-sm w-[140px]">
                                                         {currency(
-                                                            program.almamater_fee
+                                                            program.tuition_fees.orientation_fee
                                                         )}
                                                     </td>
-                                                    <td className="px-4 py-2 border border-zinc-300 text-xs">
+                                                    <td className="px-4 py-2 border border-zinc-300 text-sm w-[140px]">
                                                         {currency(
-                                                            program.tuition_fee
+                                                            program.tuition_fees.tuition_fee_per_semester
                                                         )}
                                                     </td>
-                                                    <td className="px-4 py-2 border border-zinc-300 text-xs">
+                                                    <td className="px-4 py-2 border border-zinc-300 text-sm w-[120px]">
                                                         {currency(
                                                             Number(
-                                                                program
-                                                                    .installments[0]
+                                                                program.tuition_fees.bps_semester_1
                                                             )
                                                         )}
                                                     </td>
-                                                    <td className="px-4 py-2 border border-zinc-300 text-xs">
+                                                    <td className="px-4 py-2 border border-zinc-300 text-sm w-[120px]">
                                                         {currency(
                                                             Number(
-                                                                program
-                                                                    .installments[1]
+                                                                program.tuition_fees.bps_semester_2
                                                             )
                                                         )}
                                                     </td>
-                                                    <td className="px-4 py-2 border border-zinc-300 text-xs">
+                                                    <td className="px-4 py-2 border border-zinc-300 text-sm w-[120px]">
                                                         {currency(
                                                             Number(
-                                                                program
-                                                                    .installments[2]
-                                                            )
-                                                        )}
-                                                    </td>
-                                                    <td className="px-4 py-2 border border-zinc-300 text-xs">
-                                                        {currency(
-                                                            Number(
-                                                                program.matriculation_fee
-                                                            )
-                                                        )}
-                                                    </td>
-                                                    <td className="px-4 py-2 border border-zinc-300 text-xs">
-                                                        {currency(
-                                                            Number(
-                                                                program.exam_fee
+                                                                program.tuition_fees.bps_semester_3
                                                             )
                                                         )}
                                                     </td>
                                                 </tr>
                                             )
                                         )}
-                                    </tbody>
-                                </table>
-                            </AccordionContent>
-                        </AccordionItem>
-                    </Accordion>
+                                        </tbody>
+                                    </table>
+                                </AccordionContent>
+                            </AccordionItem>
+                        </Accordion>
+                    ) : null
+
                 ))}
             </div>
 

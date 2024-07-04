@@ -5,8 +5,14 @@ import Guest from "@/Layouts/GuestLayout";
 import Undergraduate from "./_components/undergraduate";
 import PostGraduate from "./_components/post-graduate";
 import { ChevronRight, Download } from "lucide-react";
+import {Undergraduate as UndergraduateType} from "@/types";
 
-const Index = () => {
+interface IndexProps {
+    data: UndergraduateType[]
+}
+
+const Index = ({data}: IndexProps) => {
+
     const handleRedirect = (programs: string) => {
         return router.get(route(programs));
     };
@@ -33,11 +39,11 @@ const Index = () => {
                 <div className="w-full flex md:flex-row flex-col mt-10 md:gap-x-14 gap-x-0">
                     <div className="md:w-4/5 w-full pb-10">
                         <div className="mb-10">
-                            <Undergraduate />
+                            <Undergraduate data={data} />
                         </div>
                         <hr />
                         <div className="mt-10">
-                            <PostGraduate />
+                            <PostGraduate data={data}  />
                         </div>
                     </div>
 

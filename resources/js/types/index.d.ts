@@ -99,7 +99,7 @@ export type Undergraduate = {
         created_at: string;
         updated_at: string;
         tuition_fees: TuitionFees
-    };
+    }[];
     sarjana_departments: {
         id: number;
         faculty_id: number;

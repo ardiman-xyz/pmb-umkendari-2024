@@ -10,9 +10,13 @@ import currency from "@/Helpers/currency.js";
 
 import undgraduates from "@/data/undergraduate-tuition-fees.json";
 import { Download } from "lucide-react";
+import {Undergraduate as UndergraduateType} from "@/types";
 
-const Undergraduate = () => {
-    const { faculties } = undgraduates;
+interface UndergraduateProps {
+    data: UndergraduateType[]
+}
+
+const Undergraduate = ({data}: UndergraduateProps) => {
 
     const handleDownload = () => {
         const link = document.createElement("a");
@@ -27,7 +31,7 @@ const Undergraduate = () => {
                 Biaya pendidikan sarjana (S1)
             </h2>
             <div className="w-full mx-auto  overflow-x-auto">
-                {faculties.map((faculty, index) => (
+                {data.map((faculty, index) => (
                     <Accordion
                         type="single"
                         collapsible
@@ -35,7 +39,7 @@ const Undergraduate = () => {
                         className="border-x-[1px] border-y-[0.5px] border-zinc-300 px-4"
                     >
                         <AccordionItem value={`item-${index + 1}`}>
-                            <AccordionTrigger>{faculty.name}</AccordionTrigger>
+                            <AccordionTrigger className="capitalize">Fakultas {faculty.name}</AccordionTrigger>
                             <AccordionContent className="overflow-x-auto">
                                 <table className="w-full overflow-x-scroll  text-sm leading-normal ">
                                     <thead>
@@ -84,7 +88,7 @@ const Undergraduate = () => {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {faculty.programs.map(
+                                        {faculty.sarjana_departments.map(
                                             (program, key) => (
                                                 <tr key={key}>
                                                     <td className="px-4 py-2 border border-zinc-300 text-sm">
@@ -92,40 +96,37 @@ const Undergraduate = () => {
                                                     </td>
                                                     <td className="px-4 py-2 border border-zinc-300 text-sm w-[140px]">
                                                         {currency(
-                                                            program.registration_fee
+                                                            program.tuition_fees.registration_fee
                                                         )}
                                                     </td>
                                                     <td className="px-4 py-2 border border-zinc-300 text-sm w-[140px]">
                                                         {currency(
-                                                            program.orientation_fee
+                                                            program.tuition_fees.orientation_fee
                                                         )}
                                                     </td>
                                                     <td className="px-4 py-2 border border-zinc-300 text-sm w-[140px]">
                                                         {currency(
-                                                            program.tuition_fee
+                                                            program.tuition_fees.tuition_fee_per_semester
                                                         )}
                                                     </td>
                                                     <td className="px-4 py-2 border border-zinc-300 text-sm w-[120px]">
                                                         {currency(
                                                             Number(
-                                                                program
-                                                                    .installments[0]
+                                                                program.tuition_fees.bps_semester_1
                                                             )
                                                         )}
                                                     </td>
                                                     <td className="px-4 py-2 border border-zinc-300 text-sm w-[120px]">
                                                         {currency(
                                                             Number(
-                                                                program
-                                                                    .installments[1]
+                                                                program.tuition_fees.bps_semester_2
                                                             )
                                                         )}
                                                     </td>
                                                     <td className="px-4 py-2 border border-zinc-300 text-sm w-[120px]">
                                                         {currency(
                                                             Number(
-                                                                program
-                                                                    .installments[2]
+                                                                program.tuition_fees.bps_semester_3
                                                             )
                                                         )}
                                                     </td>

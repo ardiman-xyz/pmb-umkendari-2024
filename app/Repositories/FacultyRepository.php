@@ -45,10 +45,12 @@ class FacultyRepository
         }])->get()->map(function ($faculty) {
             $faculty->sarjana_departments = $faculty->departments->filter(function ($department) {
                 return $department->tuitionFees && $department->tuitionFees->degree_level === 'sarjana';
-            });
+            })->values();
+
             $faculty->pascasarjana_departments = $faculty->departments->filter(function ($department) {
                 return $department->tuitionFees && $department->tuitionFees->degree_level === 'pascasarjana';
-            });
+            })->values();
+
             unset($faculty->departments);
             return $faculty;
         });
