@@ -4,7 +4,6 @@ import Guest from "@/Layouts/GuestLayout";
 
 import FilePdf from "../../../../../public/file/jenis_persyaratan_beasiswa.pdf";
 import { ChevronRight, Download } from "lucide-react";
-import { Button } from "@/Components/ui/button";
 import {Information} from "@/types";
 
 interface IndexProps {
