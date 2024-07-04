@@ -5,11 +5,14 @@ import Programs from "./_components/programs";
 import Facility from "./_components/facility";
 import Achievements from "./_components/achievements";
 import Procedure from "./_components/procedure";
-import {Slider} from "@/types";
+import {Achievement, Facility as FacilityType, Information, Slider} from "@/types";
 
 interface HomeProps {
     data: {
-        sliders: Slider[]
+        sliders: Slider[];
+        facilities: FacilityType[];
+        achievements: Achievement[];
+        information: Information
     };
     appUrl: string;
 }
@@ -32,15 +35,15 @@ export default function Home({data, appUrl}: HomeProps) {
                         <Programs url={appUrl} />
                     </section>
                     <section className="md:mt-[114px] mt-6 container mx-auto">
-                        <Facility />
+                        <Facility facilities={data.facilities} />
                     </section>
 
                     <section className="md:mt-[200px] mt-6">
-                        <Achievements />
+                        <Achievements achievements={data.achievements} />
                     </section>
 
                     <section className="mt-[100px] container mx-auto">
-                        <Procedure />
+                        <Procedure data={data.information} />
                     </section>
                 </div>
             </Guest>

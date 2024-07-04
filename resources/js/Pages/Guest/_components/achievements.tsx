@@ -5,9 +5,13 @@ import "swiper/css/pagination";
 
 import { Autoplay } from "swiper/modules";
 import { Button } from "@/Components/ui/button";
+import {Achievement} from "@/types";
 
-const Achievements = () => {
-    const numbers = Array.from({ length: 14 }, (_, i) => i + 1);
+interface AchievementsProps {
+    achievements: Achievement[]
+}
+
+const Achievements = ({achievements}: AchievementsProps) => {
 
     const handleRedirect = () => {
         window.open("https://www.instagram.com/umkendari_/");
@@ -67,11 +71,11 @@ const Achievements = () => {
                     }}
                     modules={[Autoplay]}
                 >
-                    {numbers.map((number) => (
-                        <SwiperSlide key={number}>
+                    {achievements.map((item, index) => (
+                        <SwiperSlide key={index}>
                             <img
-                                src={`/images/achievments/${number}.png`}
-                                alt="gambar"
+                                src={item.image_path}
+                                alt={`Gambar ${item.title}`}
                                 className="w-full h-full"
                             />
                         </SwiperSlide>

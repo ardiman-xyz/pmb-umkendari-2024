@@ -1,14 +1,18 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/pagination";
 
 import { Autoplay, Pagination } from "swiper/modules";
+import {Facility as FacilityType} from "@/types";
 
-const numbers = Array.from({ length: 11 }, (_, i) => i + 1);
 
-const Facility = () => {
+interface FacilityProps {
+    facilities: FacilityType[]
+}
+
+const Facility = ({facilities}: FacilityProps) => {
     return (
         <div className="flex flex-col gap-y-3 md:gap-y-0">
             <div className="w-full ">
@@ -46,15 +50,15 @@ const Facility = () => {
                     autoplay
                     className="mySwiper"
                 >
-                    {numbers.map((number) => (
-                        <SwiperSlide key={number}>
+                    {facilities.map((facility, index) => (
+                        <SwiperSlide key={index}>
                             <img
                                 style={{
                                     width: "100%",
                                     height: "100%",
                                     objectFit: "cover",
                                 }}
-                                src={`/images/facilities/${number}.webp`}
+                                src={facility.image_path}
                                 alt="slider"
                             />
                         </SwiperSlide>
