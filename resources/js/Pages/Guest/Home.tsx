@@ -1,32 +1,35 @@
-import { Link, Head } from "@inertiajs/react";
-import { PageProps } from "@/types";
+import { Head } from "@inertiajs/react";
 import Guest from "@/Layouts/GuestLayout";
 import Jumbotron from "./_components/jumbotron";
 import Programs from "./_components/programs";
 import Facility from "./_components/facility";
 import Achievements from "./_components/achievements";
 import Procedure from "./_components/procedure";
+import {Slider} from "@/types";
 
-export default function Home({
-    auth,
-    laravelVersion,
-    phpVersion,
-}: PageProps<{ laravelVersion: string; phpVersion: string }>) {
+interface HomeProps {
+    data: {
+        sliders: Slider[]
+    };
+    appUrl: string;
+}
+
+export default function Home({data, appUrl}: HomeProps) {
+
     return (
         <>
             <Head>
                 <title>Selamat datang</title>
                 <meta
-                    head-key="description"
                     name="description"
                     content="This is a page specific description"
                 />
             </Head>
             <Guest>
                 <div>
-                    <Jumbotron />
+                    <Jumbotron sliders={data.sliders} />
                     <section className="mt-10 container mx-auto">
-                        <Programs />
+                        <Programs url={appUrl} />
                     </section>
                     <section className="md:mt-[114px] mt-6 container mx-auto">
                         <Facility />

@@ -12,8 +12,13 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import {Slider} from "@/types";
 
-const Jumbotron = () => {
+interface JumbotronProps {
+    sliders: Slider[]
+}
+
+const Jumbotron = ({sliders}: JumbotronProps) => {
     return (
         <div>
             <Swiper
@@ -22,64 +27,25 @@ const Jumbotron = () => {
                 slidesPerView={1}
                 pagination={{ clickable: true }}
                 autoplay={{
-                    delay: 4000,
+                    delay: 5000,
                 }}
             >
-                <SwiperSlide>
-                    <img
-                        style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
-                        }}
-                        src="/images/sliders/banner_0.webp"
-                        alt="slider"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img
-                        style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
-                        }}
-                        src="/images/sliders/banner_4.webp"
-                        alt="slider"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img
-                        style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
-                        }}
-                        src="/images/sliders/banner_1.webp"
-                        alt="slider"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img
-                        style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
-                        }}
-                        src="/images/sliders/banner_2.webp"
-                        alt="slider"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img
-                        style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
-                        }}
-                        src="/images/sliders/banner_3.webp"
-                        alt="slider"
-                    />
-                </SwiperSlide>
+                {
+                    sliders.map((slider, index) => (
+                        <SwiperSlide key={index}>
+                            <img
+                                style={{
+                                    width: "100%",
+                                    height: "100%",
+                                    objectFit: "cover",
+                                }}
+                                src={slider.image_path}
+                                alt="slider"
+                            />
+                        </SwiperSlide>
+                    ))
+                }
+
             </Swiper>
         </div>
     );

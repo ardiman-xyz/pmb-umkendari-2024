@@ -17,6 +17,7 @@ Route::middleware('auth')->group(function () {
         Route::get('create', [SliderController::class, "create"])->name("slider.create");
         Route::post('/', [SliderController::class, "store"])->name("slider.store");
         Route::delete('{id}', [SliderController::class, "destroy"])->name("slider.destroy");
+
     });
 
     Route::prefix('profile')->group(function () {

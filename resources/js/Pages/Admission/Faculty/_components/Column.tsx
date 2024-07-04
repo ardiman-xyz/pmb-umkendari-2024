@@ -21,7 +21,7 @@ export const columns: ColumnDef<Faculty>[] = [
             return (
                 <div >
                     <Link href={route("faculty.show", row.original.id)}>
-                       <p className="hover:underline text-blue-1 hover:text-blue-2 font-semibold capitalize"> {row.original.name}</p>
+                       <p className="hover:underline text-blue-1 hover:text-blue-2 font-semibold capitalize">Fakultas {row.original.name}</p>
                     </Link>
                 </div>
             )

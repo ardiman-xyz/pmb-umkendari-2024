@@ -177,7 +177,10 @@ export const ModalCreate = ({isOpen, handleClose, facultyId}: ModalCreateProps) 
                                     name="orientation_fee"
                                     render={({field}) => (
                                         <FormItem>
-                                            <FormLabel>Orientasi</FormLabel>
+                                            <FormLabel>
+                                                {degreeLevel === "pascasarjana" ? "Biaya Almamater" :"Orientasi" }
+
+                                            </FormLabel>
                                             <FormControl>
                                                 <Input type={"number"} {...field} />
                                             </FormControl>
