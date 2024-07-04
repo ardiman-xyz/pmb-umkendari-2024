@@ -1,30 +1,44 @@
 import { Head, router } from "@inertiajs/react";
 
-import underGraduates from "@/data/undergaraduate.json";
-
 import Guest from "@/Layouts/GuestLayout";
 import { Button } from "@/Components/ui/button";
-import { ChevronRight, Download } from "lucide-react";
+import {ChevronRight, Download} from "lucide-react";
+import {Department, Undergraduate} from "@/types";
+import {useState} from "react";
+import {TuitionFeesModal} from "@/Pages/Guest/Undergraduate/_components/TuitionFeesModal";
 
-const UndergraduatePage = () => {
-    const { faculties } = underGraduates;
+interface Props {
+    data: Undergraduate[]
+}
+
+const UndergraduatePage = ({data}: Props) => {
+
+    const [selectedDepartment, setSelectedDepartment] = useState<Department|undefined>(undefined);
 
     const handleRedirect = (programs: string) => {
         return router.get(route(programs));
     };
 
-    const handleDownload = () => {
-        const link = document.createElement("a");
-        link.href = "/file/admisi.pdf";
-        link.download = "admisi_2024.pdf";
-        link.click();
-    };
+    // const handleDownload = () => {
+    //     const link = document.createElement("a");
+    //     link.href = "/file/admisi.pdf";
+    //     link.download = "admisi_2024.pdf";
+    //     link.click();
+    // };
 
     const handleDownloadBrosur = () => {
         const link = document.createElement("a");
         link.href = "/file/admisi-umk-brosur-2024.pdf";
         link.download = "admisi-umk-brosur-2024.pdf.pdf";
         link.click();
+    };
+
+    const onClickDetail = (department: Department) => {
+        setSelectedDepartment(department);
+    };
+
+    const closeModal = () => {
+        setSelectedDepartment(undefined);
     };
 
     return (
@@ -50,59 +64,65 @@ const UndergraduatePage = () => {
                 <div className="w-full flex md:flex-row flex-col mt-10 md:gap-x-20 gap-x-0">
                     <div className="md:w-2/3 w-full pb-10">
                         <div className="w-full mx-auto overflow-x-auto ">
-                            {faculties.map((faculty, index) => (
+                            {data.map((faculty, index) => (
                                 <div key={index} className="mb-6">
-                                    <h1 className="mb-2 font-bold">
-                                        {faculty.name}
+                                    <h1 className="mb-2 font-bold capitalize">
+                                       Fakultas {faculty.name}
                                     </h1>
 
                                     <table className="w-[100%] text-sm leading-normal border border-zinc-500">
                                         <thead>
-                                            <tr>
-                                                <th className="px-4 py-2 text-left border border-zinc-500">
-                                                    Program Studi
-                                                </th>
-                                                <th className="px-4 py-2  border border-zinc-500 text-center">
-                                                    Akreditasi
-                                                </th>
-                                                <th className="px-4 py-2 border border-zinc-500 text-center">
-                                                    Daya Tampung
-                                                </th>
-                                            </tr>
+                                        <tr>
+                                            <th className="px-4 py-2 text-left border border-zinc-500">
+                                                Program Studi
+                                            </th>
+                                            <th className="px-4 py-2  border border-zinc-500 text-center">
+                                                Akreditasi
+                                            </th>
+                                            <th className="px-4 py-2 border border-zinc-500 text-center">
+                                                Daya Tampung
+                                            </th>
+                                            <th className="px-4 py-2 border border-zinc-500 text-center">
+                                                Biaya Pendidikan
+                                            </th>
+                                        </tr>
                                         </thead>
                                         <tbody>
-                                            {faculty.programs.map(
-                                                (program, key) => (
-                                                    <tr key={key}>
-                                                        <td className="px-4 py-2 border border-zinc-500">
-                                                            {program.name}
-                                                        </td>
-                                                        <td className="px-4 py-2 border border-zinc-500 w-[100px] text-center">
-                                                            {
-                                                                program.accreditation
-                                                            }
-                                                        </td>
-                                                        <td className="px-4 py-2 border border-zinc-500 w-[200px] text-center">
-                                                            {program.quota}
-                                                        </td>
-                                                    </tr>
-                                                )
-                                            )}
+                                        {faculty.sarjana_departments.map(
+                                            (department, key) => (
+                                                <tr key={key}>
+                                                    <td className="px-4 py-2 border border-zinc-500">
+                                                        {department.name}
+                                                    </td>
+                                                    <td className="px-4 py-2 border border-zinc-500 w-[100px] text-center">
+                                                        {department.accreditation}
+                                                    </td>
+                                                    <td className="px-4 py-2 border border-zinc-500 w-[200px] text-center">
+                                                        {department.tuition_fees.capacity}
+                                                    </td>
+                                                    <td className="px-4 py-2 border border-zinc-500 w-[200px] text-center">
+                                                        <Button onClick={() => onClickDetail(department)} variant="ghost" className="text-[#991B1B] underline">
+                                                            Lihat
+                                                        </Button>
+                                                    </td>
+                                                </tr>
+                                            )
+                                        )}
                                         </tbody>
                                     </table>
                                 </div>
                             ))}
                         </div>
-                        <hr />
+                        {/*<hr />*/}
 
-                        <div className="mt-10 flex">
-                            <Button
-                                onClick={handleDownload}
-                                variant="guestButtonDefault"
-                            >
-                                Donwload template
-                            </Button>
-                        </div>
+                        {/*<div className="mt-10 flex">*/}
+                        {/*    <Button*/}
+                        {/*        onClick={handleDownload}*/}
+                        {/*        variant="guestButtonDefault"*/}
+                        {/*    >*/}
+                        {/*        Donwload template*/}
+                        {/*    </Button>*/}
+                        {/*</div>*/}
                     </div>
                     <div
                         id="right"
@@ -158,6 +178,12 @@ const UndergraduatePage = () => {
                     </div>
                 </div>
             </div>
+
+            {
+                selectedDepartment && (
+                    <TuitionFeesModal onOpen={true} onClose={closeModal} data={selectedDepartment} />
+                )
+            }
         </Guest>
     );
 };

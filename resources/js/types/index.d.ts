@@ -79,3 +79,37 @@ export type Information = {
     admission_brochure: string | null;
     entry_paths_requirements: string | null;
 }
+
+export type Undergraduate = {
+    id: number;
+    name: string;
+    slug: string;
+    cover: string | null;
+    description: string | null;
+    created_at: string;
+    updated_at: string;
+    pascasarjana_departments: {
+        id: number;
+        faculty_id: number;
+        name: string;
+        slug: string;
+        cover: string | null;
+        description: string | null;
+        accreditation: string;
+        created_at: string;
+        updated_at: string;
+        tuition_fees: TuitionFees
+    };
+    sarjana_departments: {
+        id: number;
+        faculty_id: number;
+        name: string;
+        slug: string;
+        cover: string | null;
+        description: string | null;
+        accreditation: string;
+        created_at: string;
+        updated_at: string;
+        tuition_fees: TuitionFees
+    }[]
+}

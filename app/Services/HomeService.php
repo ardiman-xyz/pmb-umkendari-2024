@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Repositories\AchievementRepository;
 use App\Repositories\FacilityRepository;
+use App\Repositories\FacultyRepository;
 use App\Repositories\InformationRepository;
 use App\Repositories\SliderRepository;
 
@@ -13,7 +14,8 @@ class HomeService
         protected SliderRepository $sliderRepository,
         protected FacilityRepository $facilityRepository,
         protected AchievementRepository $achievementRepository,
-        protected InformationRepository $informationRepository
+        protected InformationRepository $informationRepository,
+        protected FacultyRepository $facultyRepository
     ){}
 
     public function getDataHome(): array
@@ -29,5 +31,15 @@ class HomeService
             "achievements" => $achievements,
             "information" => $information
         ];
+    }
+
+    public function getFacultyUndergraduate()
+    {
+        return $this->facultyRepository->getFacultiesWithDepartmentsAndTuitionFees();
+    }
+
+    public function getFacultyGraduate()
+    {
+        return $this->facultyRepository->getDepartmentByGraduate();
     }
 }

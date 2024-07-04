@@ -4,8 +4,16 @@ import { Head, router } from "@inertiajs/react";
 import faculties from "@/data/graduate.json";
 import { ChevronRight, Download } from "lucide-react";
 import { Button } from "@/Components/ui/button";
+import {Faculty} from "@/types";
 
-const Index = () => {
+interface Props {
+    data: Faculty[]
+}
+
+const Index = ({data}: Props) => {
+
+    console.info(data)
+
     const { postgraduate_programs } = faculties;
 
     const handleRedirect = (programs: string) => {
@@ -44,38 +52,51 @@ const Index = () => {
                     <div className="md:w-2/3 w-full pb-10">
                         <div className="pb-10 mt-8">
                             <div className="w-full mx-auto overflow-auto">
-                                <table className="w-full text-sm leading-normal border border-zinc-500">
-                                    <thead>
-                                        <tr>
-                                            <th className="px-4 py-2 text-left border border-zinc-500">
-                                                Program Studi
-                                            </th>
-                                            <th className="px-4 py-2  border border-zinc-500 text-center">
-                                                Akreditasi
-                                            </th>
-                                            <th className="px-4 py-2 border border-zinc-500 text-center">
-                                                Daya Tampung
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {postgraduate_programs.map(
-                                            (program, key) => (
+                                {data.map((faculty, index) => (
+                                faculty.departments && faculty.departments.length > 0 ? (
+                                    <div key={index} className="mb-6">
+                                        <h1 className="mb-2 font-bold capitalize">
+                                            Fakultas {faculty.name}
+                                        </h1>
+
+                                        <table className="w-[100%] text-sm leading-normal border border-zinc-500">
+                                            <thead>
+                                            <tr>
+                                                <th className="px-4 py-2 text-left border border-zinc-500">
+                                                    Program Studi
+                                                </th>
+                                                <th className="px-4 py-2  border border-zinc-500 text-center">
+                                                    Akreditasi
+                                                </th>
+                                                <th className="px-4 py-2 border border-zinc-500 text-center">
+                                                    Daya Tampung
+                                                </th>
+                                                {/*<th className="px-4 py-2 border border-zinc-500 text-center">*/}
+                                                {/*    Biaya Pendidikan*/}
+                                                {/*</th>*/}
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {faculty.departments.map((department, key) => (
                                                 <tr key={key}>
                                                     <td className="px-4 py-2 border border-zinc-500">
-                                                        {program.name}
+                                                        {department.name}
                                                     </td>
                                                     <td className="px-4 py-2 border border-zinc-500 w-[100px] text-center">
-                                                        {program.accreditation}
+                                                        {department.accreditation}
                                                     </td>
                                                     <td className="px-4 py-2 border border-zinc-500 w-[200px] text-center">
-                                                        {program.quota}
+                                                        {department.tuition_fees.capacity}
                                                     </td>
+                                                    {/*<td className="px-4 py-2 border border-zinc-500 w-[200px] text-center">*/}
+                                                    {/*</td>*/}
                                                 </tr>
-                                            )
-                                        )}
-                                    </tbody>
-                                </table>
+                                            ))}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                ) : null
+                            ))}
                             </div>
                         </div>
                         {/* <div className="flex">

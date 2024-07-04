@@ -35,4 +35,40 @@ class FacultyRepository
     {
         return Model::with('departments.tuitionFees')->findOrFail($id);
     }
+
+    public function getFacultiesWithDepartmentsAndTuitionFees()
+    {
+        return Model::with(['departments' => function ($query) {
+            $query->with(['tuitionFees' => function ($query) {
+                $query->whereIn('degree_level', ['sarjana', 'pascasarjana']);
+            }]);
+        }])->get()->map(function ($faculty) {
+            $faculty->sarjana_departments = $faculty->departments->filter(function ($department) {
+                return $department->tuitionFees && $department->tuitionFees->degree_level === 'sarjana';
+            });
+            $faculty->pascasarjana_departments = $faculty->departments->filter(function ($department) {
+                return $department->tuitionFees && $department->tuitionFees->degree_level === 'pascasarjana';
+            });
+            unset($faculty->departments);
+            return $faculty;
+        });
+    }
+
+    public function getDepartmentByGraduate()
+    {
+        return Model::with(['departments' => function ($query) {
+            $query->whereHas('tuitionFees', function ($subQuery) {
+                $subQuery->where('degree_level', 'pascasarjana');
+            })->with(['tuitionFees' => function ($subQuery) {
+                $subQuery->where('degree_level', 'pascasarjana');
+            }]);
+        }])
+            ->get()
+            ->map(function ($faculty) {
+                $faculty->setRelation('departments', $faculty->departments->filter(function ($department) {
+                    return $department->tuitionFees !== null;
+                }));
+                return $faculty;
+            });
+    }
 }
